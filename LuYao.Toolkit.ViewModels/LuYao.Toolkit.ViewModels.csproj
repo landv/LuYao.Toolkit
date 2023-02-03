@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<Import Project="..\common.props" />
+	<PropertyGroup>
+		<TargetFramework>net7.0-windows</TargetFramework>
+		<RootNamespace>LuYao.Toolkit</RootNamespace>
+		<LangVersion>latest</LangVersion>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.1.0"></PackageReference>
+		<PackageReference Include="CsvHelper" Version="30.0.1" />
+		<PackageReference Include="EPPlus" Version="6.1.2" />
+		<PackageReference Include="Fluid.Core" Version="2.3.1" />
+		<PackageReference Include="Jint" Version="3.0.0-beta-2046" />
+		<PackageReference Include="Magick.NET-Q16-AnyCPU" Version="12.2.2" />
+		<PackageReference Include="Microsoft.Extensions.FileProviders.Physical" Version="7.0.0" />
+		<PackageReference Include="UAParser" Version="3.1.47" />
+		<PackageReference Include="YamlDotNet" Version="12.3.1" />
+		<PackageReference Include="Prism.Wpf" Version="8.1.97" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\LuYao.Toolkit.Core\LuYao.Toolkit.Core.csproj" />
+		<ProjectReference Include="..\LuYao.Toolkit.Extensions\LuYao.Toolkit.Extensions.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Reference Include="LuYao.Common">
+	    <HintPath>..\libs\LuYao.Common.dll</HintPath>
+	  </Reference>
+	</ItemGroup>
+
+	<ProjectExtensions>
+		<VisualStudio>
+			<UserProperties />
+		</VisualStudio>
+	</ProjectExtensions>
+
+</Project>

@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="LuYao.Toolkit.Channels.Gens.GenXCodeEntity"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LuYao.Toolkit.Channels.Gens"             
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             xmlns:controls="clr-namespace:LuYao.Toolkit.Controls"
+             mc:Ignorable="d" 
+             d:Background="{DynamicResource RegionBrush}"
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <hc:UniformSpacingPanel Orientation="Vertical" Margin="15,15,15,10" Spacing="10"  >
+        <hc:UniformSpacingPanel Spacing="10" ItemVerticalAlignment="Center">
+            <TextBlock Text="模型文件："></TextBlock>
+            <controls:FileSelector  FileType="Xml" Width="230" FilePath="{Binding XmlFileName}" FileTypeDescription="XCode XML 模型文件" ></controls:FileSelector>
+        </hc:UniformSpacingPanel>
+        <CheckBox Content="修正模型文件" IsChecked="{Binding FixModelFile}"></CheckBox>
+        <CheckBox Content="使用中文文件名" IsChecked="{Binding ChineseFileName}"></CheckBox>
+        <CheckBox Content="使用列名称填充空说明（Description）" x:Name="chkAutoFillDescription" IsChecked="{Binding AutoFillDescription}"></CheckBox>
+        <CheckBox Content="将说明翻译为中文" IsEnabled="{Binding ElementName=chkAutoFillDescription,Path=IsChecked}" IsChecked="{Binding AutoFillToChinese}"></CheckBox>
+        <StackPanel Orientation="Horizontal">
+            <Button Content="生成" Command="{Binding GenCommand}" Style="{DynamicResource ButtonPrimary}" Width="128" ></Button>
+        </StackPanel>
+        <TextBlock Text="{Binding Output}"></TextBlock>
+    </hc:UniformSpacingPanel>
+</UserControl>

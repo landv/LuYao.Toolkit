@@ -1,0 +1,55 @@
+﻿14:53:56.938  1 N - 导入模型：D:\src\coderbusy\luyao\src\toolkit\LuYao.Toolkit.Core\Entities\LuYao.Toolkit.xml
+14:53:57.018  1 N - 修正模型：D:\src\coderbusy\luyao\src\toolkit\LuYao.Toolkit.Core\Entities\LuYao.Toolkit.xml
+14:53:57.020  1 N - 生成实体类 D:\src\coderbusy\luyao\src\toolkit\LuYao.Toolkit.Core\Entities
+14:53:57.024  1 N - 生成 ViewModelState ViewModelState {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+14:53:57.041  1 N - 生成 ViewModelState ViewModelState {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+14:53:57.061  1 N - 生成 ChannelItemSession ChannelItemSession {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+14:53:57.062  1 N - 生成 ChannelItemSession ChannelItemSession {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+14:53:57.062  1 N - 生成 RdoIdCard RdoIdCard {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+14:53:57.062  1 N - 生成 RdoIdCard RdoIdCard {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+14:53:58.389  9 N T 实体缓存<ViewModelState>(14)总次数          8，命中          5（62.50%）	[LuYao.Toolkit.Entities.ViewModelState]
+14:54:13.169  1 N - 导入模型：D:\src\coderbusy\luyao\src\toolkit\LuYao.Toolkit.Core\Entities\LuYao.Toolkit.xml
+14:54:13.171  1 N - 生成实体类 D:\src\coderbusy\luyao\src\toolkit\LuYao.Toolkit.Core\Entities
+14:54:13.171  1 N - 生成 ViewModelState ViewModelState {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+14:54:13.171  1 N - 生成 ViewModelState ViewModelState {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+14:54:13.171  1 N - 生成 ChannelItemSession ChannelItemSession {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+14:54:13.172  1 N - 生成 ChannelItemSession ChannelItemSession {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+14:54:13.172  1 N - 生成 RdoIdCard RdoIdCard {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+14:54:13.172  1 N - 生成 RdoIdCard RdoIdCard {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+14:54:13.983  1 N - 导入模型：D:\src\coderbusy\luyao\src\toolkit\LuYao.Toolkit.Core\Entities\LuYao.Toolkit.xml
+14:54:13.984  1 N - 生成实体类 D:\src\coderbusy\luyao\src\toolkit\LuYao.Toolkit.Core\Entities
+14:54:13.984  1 N - 生成 ViewModelState ViewModelState {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+14:54:13.985  1 N - 生成 ViewModelState ViewModelState {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+14:54:13.985  1 N - 生成 ChannelItemSession ChannelItemSession {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+14:54:13.985  1 N - 生成 ChannelItemSession ChannelItemSession {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+14:54:13.986  1 N - 生成 RdoIdCard RdoIdCard {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+14:54:13.986  1 N - 生成 RdoIdCard RdoIdCard {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+14:54:14.287  1 N - 导入模型：D:\src\coderbusy\luyao\src\toolkit\LuYao.Toolkit.Core\Entities\LuYao.Toolkit.xml
+14:54:14.288  1 N - 生成实体类 D:\src\coderbusy\luyao\src\toolkit\LuYao.Toolkit.Core\Entities
+14:54:14.295  1 N - 生成 ViewModelState ViewModelState {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+14:54:14.302  1 N - 生成 ViewModelState ViewModelState {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+14:54:14.302  1 N - 生成 ChannelItemSession ChannelItemSession {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+14:54:14.303  1 N - 生成 ChannelItemSession ChannelItemSession {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+14:54:14.303  1 N - 生成 RdoIdCard RdoIdCard {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+14:54:14.303  1 N - 生成 RdoIdCard RdoIdCard {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+14:54:14.466  1 N - 导入模型：D:\src\coderbusy\luyao\src\toolkit\LuYao.Toolkit.Core\Entities\LuYao.Toolkit.xml
+14:54:14.467  1 N - 生成实体类 D:\src\coderbusy\luyao\src\toolkit\LuYao.Toolkit.Core\Entities
+14:54:14.467  1 N - 生成 ViewModelState ViewModelState {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+14:54:14.467  1 N - 生成 ViewModelState ViewModelState {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+14:54:14.468  1 N - 生成 ChannelItemSession ChannelItemSession {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+14:54:14.468  1 N - 生成 ChannelItemSession ChannelItemSession {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+14:54:14.468  1 N - 生成 RdoIdCard RdoIdCard {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+14:54:14.469  1 N - 生成 RdoIdCard RdoIdCard {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+15:29:22.878  1 N - 导入模型：D:\src\coderbusy\luyao\src\toolkit\LuYao.Toolkit.Core\Entities\LuYao.Toolkit.xml
+15:29:22.958  1 N - 修正模型：D:\src\coderbusy\luyao\src\toolkit\LuYao.Toolkit.Core\Entities\LuYao.Toolkit.xml
+15:29:22.960  1 N - 生成实体类 D:\src\coderbusy\luyao\src\toolkit\LuYao.Toolkit.Core\Entities
+15:29:22.963  1 N - 生成 ViewModelState ViewModelState {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+15:29:22.975  1 N - 生成 ViewModelState ViewModelState {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+15:29:22.995  1 N - 生成 ChannelItemSession ChannelItemSession {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+15:29:22.995  1 N - 生成 ChannelItemSession ChannelItemSession {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+15:29:22.996  1 N - 生成 RdoIdCard RdoIdCard {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+15:29:22.996  1 N - 生成 RdoIdCard RdoIdCard {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+15:29:22.996  1 N - 生成 RdoFolder RdoFolder {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+15:29:22.997  1 N - 生成 RdoFolder RdoFolder {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+15:29:22.998  1 N - 生成 RdoConnection RdoConnection {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+15:29:22.999  1 N - 生成 RdoConnection RdoConnection {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}

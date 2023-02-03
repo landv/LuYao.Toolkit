@@ -1,0 +1,87 @@
+﻿<UserControl x:Class="LuYao.Toolkit.Channels.Texts.RegexEvaluator"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LuYao.Toolkit.Channels.Texts"
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             xmlns:editor="http://icsharpcode.net/sharpdevelop/avalonedit"
+             xmlns:convs="clr-namespace:LuYao.Toolkit.Converters"
+             mc:Ignorable="d" 
+             xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+             xmlns:bh="clr-namespace:LuYao.Toolkit.Behaviors"
+             d:Background="{DynamicResource RegionBrush}"
+             xmlns:me="clr-namespace:LuYao.Toolkit.Controls"
+             d:DesignHeight="1000" d:DesignWidth="800">
+    <UserControl.Resources>
+        <convs:RegexMatchPositionConverter x:Key="RegexMatchPositionConverter"></convs:RegexMatchPositionConverter>
+        <convs:SingleLineConverter x:Key="SingleLineConverter"></convs:SingleLineConverter>
+    </UserControl.Resources>
+    <hc:ScrollViewer>
+        <hc:UniformSpacingPanel Orientation="Vertical" Spacing="15" Margin="15">
+            <hc:Divider Content="正则表达式" HorizontalContentAlignment="Left" Margin="0"></hc:Divider>
+            <me:CodeEditor MinHeight="60" MaxHeight="128" Text="{Binding Pattern}"></me:CodeEditor>
+            <hc:Divider Content="输入文字" HorizontalContentAlignment="Left" Margin="0">
+            </hc:Divider>
+            <me:CodeEditor MinHeight="60" MaxHeight="128" Text="{Binding InputText}"></me:CodeEditor>
+            <hc:UniformSpacingPanel Spacing="10" ChildWrapping="Wrap" Orientation="Horizontal">
+                <CheckBox Content="IgnoreCase" IsChecked="{Binding IgnoreCase}"></CheckBox>
+                <CheckBox Content="Multiline" IsChecked="{Binding Multiline}"></CheckBox>
+                <CheckBox Content="ExplicitCapture" IsChecked="{Binding ExplicitCapture}"></CheckBox>
+                <CheckBox Content="Compiled" IsChecked="{Binding Compiled}"></CheckBox>
+                <CheckBox Content="Singleline" IsChecked="{Binding Singleline}"></CheckBox>
+                <CheckBox Content="IgnorePatternWhitespace" IsChecked="{Binding IgnorePatternWhitespace}"></CheckBox>
+                <CheckBox Content="RightToLeft" IsChecked="{Binding RightToLeft}"></CheckBox>
+                <CheckBox Content="ECMAScript" IsChecked="{Binding ECMAScript}"></CheckBox>
+                <CheckBox Content="CultureInvariant" IsChecked="{Binding CultureInvariant}"></CheckBox>
+            </hc:UniformSpacingPanel>
+            <hc:Divider Content="匹配结果" HorizontalContentAlignment="Left" Margin="0"></hc:Divider>
+            <Grid Visibility="{Binding Matches,Converter={StaticResource Object2VisibilityConverter}}" MaxHeight="300">
+                <Grid.Resources>
+                    <Style TargetType="{x:Type DataGrid}" BasedOn="{StaticResource {x:Type DataGrid}}">
+                        <Setter Property="IsReadOnly" Value="True" />
+                        <Setter Property="AutoGenerateColumns" Value="False" />
+                        <Setter Property="CanUserSortColumns" Value="False" />
+                        <Setter Property="SelectionMode" Value="Single" />
+                    </Style>
+                </Grid.Resources>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="5" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="5" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <DataGrid x:Name="MatchesDataGrid" SelectionChanged="MatchesDataGrid_SelectionChanged"   Grid.Column="0" ItemsSource="{Binding Matches}" 
+                          hc:BorderElement.CornerRadius="0">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="匹配项" Width="*" MinWidth="100" Binding="{Binding Value,Converter={StaticResource SingleLineConverter}}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="位置" MinWidth="75" Binding="{Binding Converter={StaticResource RegexMatchPositionConverter}}"></DataGridTextColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch" />
+                <DataGrid x:Name="GroupDataGrid" SelectionChanged="GroupDataGrid_SelectionChanged"    Grid.Column="2" ItemsSource="{Binding ElementName=MatchesDataGrid,Path=SelectedValue.Groups}"
+                           hc:BorderElement.CornerRadius="0">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="名称" Binding="{Binding Name}" MinWidth="50"></DataGridTextColumn>
+                        <DataGridTextColumn Header="匹配项"  Width="*" MinWidth="100" Binding="{Binding Value,Converter={StaticResource SingleLineConverter}}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="位置" MinWidth="75" Binding="{Binding Converter={StaticResource RegexMatchPositionConverter}}"></DataGridTextColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <GridSplitter Grid.Column="3"  HorizontalAlignment="Stretch" />
+                <DataGrid x:Name="CaptureDataGrid"  SelectionChanged="CaptureDataGrid_SelectionChanged"  Grid.Column="4" ItemsSource="{Binding ElementName=GroupDataGrid,Path=SelectedValue.Captures}"
+                           hc:BorderElement.CornerRadius="0">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Width="*" Header="匹配项" MinWidth="100" Binding="{Binding Value,Converter={StaticResource SingleLineConverter}}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="位置" MinWidth="75" Binding="{Binding Converter={StaticResource RegexMatchPositionConverter}}"></DataGridTextColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+            <Border Style="{DynamicResource BorderTipDanger}" Visibility="{Binding Exception,Converter={StaticResource Object2VisibilityConverter}}">
+                <TextBlock Text="{Binding Exception.Message}"></TextBlock>
+            </Border>
+            <me:CodeEditor IsReadOnly="True" SyntaxHighlighting="CSharp" Text="{Binding Code}"></me:CodeEditor>
+        </hc:UniformSpacingPanel>
+
+    </hc:ScrollViewer>
+</UserControl>

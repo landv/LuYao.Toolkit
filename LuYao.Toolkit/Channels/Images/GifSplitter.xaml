@@ -1,0 +1,75 @@
+﻿<UserControl x:Class="LuYao.Toolkit.Channels.Images.GifSplitter"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LuYao.Toolkit.Channels.Images"
+             xmlns:gif="https://github.com/XamlAnimatedGif/XamlAnimatedGif"
+             mc:Ignorable="d" 
+             xmlns:attach="clr-namespace:LuYao.Toolkit.Attaches"
+             d:Background="{StaticResource RegionBrush}"
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <DockPanel Margin="15,15,15,10">
+        <Border Width="300" DockPanel.Dock="Left" >
+            <DockPanel>
+                <hc:UniformSpacingPanel DockPanel.Dock="Bottom" Margin="0,10,0,0">
+                    <Button Content="清空图片" Command="{Binding ClearCommand}" Style="{StaticResource ButtonDanger}"></Button>
+                </hc:UniformSpacingPanel>
+                <GroupBox Header="原图" Style="{DynamicResource GroupBoxTab}" HorizontalContentAlignment="Left">
+                    <hc:SimplePanel Margin="5">
+                        <Button Content="选择图片" Style="{StaticResource ButtonPrimary}" Visibility="{Binding Origin,Converter={StaticResource String2VisibilityReConverter}}" Command="{Binding OpenFileCommand}"></Button>
+                        <Image Stretch="Uniform"  HorizontalAlignment="Center" VerticalAlignment="Top" gif:AnimationBehavior.SourceUri="{Binding Origin}" Visibility="{Binding Origin,Converter={StaticResource String2VisibilityConverter}}"></Image>
+                    </hc:SimplePanel>
+                </GroupBox>
+            </DockPanel>
+        </Border>
+        <Border>
+            <DockPanel>
+                <hc:UniformSpacingPanel DockPanel.Dock="Bottom" Margin="15,10,0,0">
+                    <Button Content="导出全部" Command="{Binding ExportCommand}" Style="{StaticResource ButtonInfo}"></Button>
+                </hc:UniformSpacingPanel>
+                <GroupBox Header="图片列表：" Style="{DynamicResource GroupBoxTab}" Margin="15,0,0,0" HorizontalContentAlignment="Left">
+                    <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="0,5">
+                        <ItemsControl ItemsSource="{Binding Frames}">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Border BorderBrush="{DynamicResource BorderBrush}" HorizontalAlignment="Center" BorderThickness="1" CornerRadius="5" Background="Transparent">
+                                        <DockPanel Margin="5">
+                                            <Border DockPanel.Dock="Bottom" Margin="0,5,0,0">
+                                                <DockPanel LastChildFill="False">
+                                                    <Button 
+                                                        DockPanel.Dock="Right" 
+                                                        Style="{DynamicResource ButtonIcon.Small}"
+                                                        hc:IconElement.Geometry="{StaticResource SaveGeometry}"
+                                                        Margin="0" Padding="0"
+                                                        Height="12"
+                                                        Cursor="Hand"
+                                                        Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl},Path=DataContext.SaveCommand}"
+                                                        CommandParameter="{Binding .}"
+                                                        />
+                                                    <TextBlock DockPanel.Dock="Left" Text="{Binding Index}" HorizontalAlignment="Center"></TextBlock>
+                                                </DockPanel>
+                                            </Border>
+                                            <Image Source="{Binding FileName}" HorizontalAlignment="Stretch">
+                                                <Image.ToolTip>
+                                                    <Image Source="{Binding FileName}"></Image>
+                                                </Image.ToolTip>
+                                            </Image>
+                                        </DockPanel>
+                                    </Border>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <hc:UniformSpacingPanel ChildWrapping="Wrap" Spacing="5" ItemHeight="95" >
+                                    </hc:UniformSpacingPanel>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                        </ItemsControl>
+                    </ScrollViewer>
+                </GroupBox>
+            </DockPanel>
+        </Border>
+    </DockPanel>
+</UserControl>

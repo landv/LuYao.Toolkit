@@ -1,0 +1,93 @@
+﻿<UserControl x:Class="LuYao.Toolkit.Channels.Converts.UnixTimestamp"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             xmlns:editor="http://icsharpcode.net/sharpdevelop/avalonedit"
+             xmlns:bh="clr-namespace:LuYao.Toolkit.Behaviors"
+             xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+             xmlns:local="clr-namespace:LuYao.Toolkit.Channels.Converts"
+             xmlns:icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             mc:Ignorable="d" 
+             d:Background="{DynamicResource RegionBrush}" Padding="15"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Style TargetType="TextBox" BasedOn="{StaticResource {x:Type TextBox}}">
+            <Setter Property="Width" Value="170" />
+        </Style>
+        <Style TargetType="icon:PackIconMaterial">
+            <Setter Property="Width" Value="13" />
+            <Setter Property="Height" Value="13" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Margin" Value="0,0,5,0" />
+        </Style>
+    </UserControl.Resources>
+    <hc:UniformSpacingPanel Orientation="Vertical" Spacing="10">
+        <hc:UniformSpacingPanel ItemVerticalAlignment="Center" Spacing="5">
+            <TextBlock Text="时间单位：" Width="140" TextAlignment="Right"></TextBlock>
+            <RadioButton Content="秒" IsChecked="{Binding Unit,Converter={StaticResource EnumBooleanConverter},ConverterParameter=Secound}"></RadioButton>
+            <RadioButton Content="毫秒" IsChecked="{Binding Unit,Converter={StaticResource EnumBooleanConverter},ConverterParameter=Millisecond}"></RadioButton>
+        </hc:UniformSpacingPanel>
+        <hc:UniformSpacingPanel Spacing="5" ItemVerticalAlignment="Center">
+            <TextBlock Text="现在的 Unix 时间戳是：" Width="140" TextAlignment="Right" ></TextBlock>
+            <TextBox Text="{Binding Current}" IsReadOnly="True"></TextBox>
+            <Button  Command="{Binding CopyCommand}" Style="{DynamicResource ButtonInfo}">
+                <StackPanel Orientation="Horizontal" >
+                    <icon:PackIconMaterial Kind="ContentCopy"></icon:PackIconMaterial>
+                    <TextBlock Text="复制"></TextBlock>
+                </StackPanel>
+            </Button>
+            <Button  Command="{Binding StopCommand}" >
+                <Button.Style>
+                    <Style TargetType="Button" BasedOn="{StaticResource ButtonDanger}">
+                        <Setter Property="Visibility" Value="{Binding AutoUpdate,Converter={StaticResource Boolean2VisibilityConverter}}" />
+                    </Style>
+                </Button.Style>
+                <StackPanel Orientation="Horizontal" >
+                    <icon:PackIconMaterial Kind="Stop"></icon:PackIconMaterial>
+                    <TextBlock Text="停止"></TextBlock>
+                </StackPanel>
+            </Button>
+            <Button  Command="{Binding StartCommand}" >
+                <Button.Style>
+                    <Style TargetType="Button" BasedOn="{StaticResource ButtonSuccess}">
+                        <Setter Property="Visibility" Value="{Binding AutoUpdate,Converter={StaticResource Boolean2VisibilityReConverter}}" />
+                    </Style>
+                </Button.Style>
+                <StackPanel Orientation="Horizontal" >
+                    <icon:PackIconMaterial Kind="Play"></icon:PackIconMaterial>
+                    <TextBlock Text="开始"></TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Style="{DynamicResource ButtonWarning}" Command="{Binding UpdateCommand}">
+                <StackPanel Orientation="Horizontal" >
+                    <icon:PackIconMaterial Kind="Refresh"></icon:PackIconMaterial>
+                    <TextBlock Text="刷新"></TextBlock>
+                </StackPanel>
+            </Button>
+        </hc:UniformSpacingPanel>
+        <hc:UniformSpacingPanel ItemVerticalAlignment="Center" Spacing="5">
+            <TextBlock Text="Unix 时间戳：" Width="140" TextAlignment="Right"></TextBlock>
+            <hc:NumericUpDown Width="170" Minimum="0" Value="{Binding ToTimeInput}"></hc:NumericUpDown>
+            <Button Style="{DynamicResource ButtonPrimary}" Command="{Binding ToTimeCommand}">
+                <StackPanel Orientation="Horizontal">
+                    <icon:PackIconMaterial Kind="PlayBoxMultipleOutline"></icon:PackIconMaterial>
+                    <TextBlock Text="转换"></TextBlock>
+                </StackPanel>
+            </Button>
+            <TextBox IsReadOnly="True" Text="{Binding ToTimeOutput}"></TextBox>
+        </hc:UniformSpacingPanel>
+        <hc:UniformSpacingPanel ItemVerticalAlignment="Center" Spacing="5">
+            <TextBlock Text="本地时间：" Width="140" TextAlignment="Right"></TextBlock>
+            <hc:DateTimePicker Width="170" SelectedDateTime="{Binding ToTimestampInput}"></hc:DateTimePicker>
+            <Button Style="{DynamicResource ButtonPrimary}" Command="{Binding ToTimestampCommand}">
+                <StackPanel Orientation="Horizontal">
+                    <icon:PackIconMaterial Kind="PlayBoxMultipleOutline"></icon:PackIconMaterial>
+                    <TextBlock Text="转换"></TextBlock>
+                </StackPanel>
+            </Button>
+            <TextBox IsReadOnly="True" Text="{Binding ToTimestampOutput}" ></TextBox>
+        </hc:UniformSpacingPanel>
+    </hc:UniformSpacingPanel>
+</UserControl>

@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="LuYao.Toolkit.Channels.Networks.Ping"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LuYao.Toolkit.Channels.Networks"
+             mc:Ignorable="d" 
+             xmlns:ctrls="clr-namespace:LuYao.Toolkit.Controls"
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             d:Background="{DynamicResource RegionBrush}"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <hc:UniformSpacingPanel Orientation="Vertical" Spacing="10" Margin="15" Width="500" HorizontalAlignment="Left">
+        <hc:UniformSpacingPanel Spacing="5">
+            <hc:TextBox Width="300" Text="{Binding Input,UpdateSourceTrigger=PropertyChanged}" hc:InfoElement.Placeholder="请输入网址或 IP">
+                <hc:TextBox.InputBindings>
+                    <KeyBinding Key="Enter" Command="{Binding PingCommand}" />
+                </hc:TextBox.InputBindings>
+            </hc:TextBox>
+            <Button Style="{DynamicResource ButtonPrimary}" Width="128" Content="Ping" Command="{Binding PingCommand}"></Button>
+        </hc:UniformSpacingPanel>
+        <TextBox IsReadOnly="True" Text="{Binding Output}" VerticalContentAlignment="Top" MinLines="15" ></TextBox>
+    </hc:UniformSpacingPanel>
+</UserControl>

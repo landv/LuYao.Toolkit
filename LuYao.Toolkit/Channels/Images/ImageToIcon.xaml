@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="LuYao.Toolkit.Channels.Images.ImageToIcon"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LuYao.Toolkit.Channels.Images"
+             mc:Ignorable="d" 
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             xmlns:controls="clr-namespace:LuYao.Toolkit.Controls"
+             d:Background="{DynamicResource RegionBrush}"
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <hc:UniformSpacingPanel Orientation="Vertical" Spacing="10" Margin="15">
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="图片文件：" VerticalAlignment="Center" Width="70"></TextBlock>
+            <controls:FileSelector Width="220" FilePath="{Binding FileName}" FileType="Image,Svg" ></controls:FileSelector>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="图片大小：" VerticalAlignment="Top" Width="70"></TextBlock>
+            <hc:UniformSpacingPanel VerticalSpacing="10" ChildWrapping="Wrap" Orientation="Vertical">
+                <CheckBox IsChecked="{Binding X16}" Content="16x16"></CheckBox>
+                <CheckBox IsChecked="{Binding X24}" Content="24x24"></CheckBox>
+                <CheckBox IsChecked="{Binding X32}" Content="32x32"></CheckBox>
+                <CheckBox IsChecked="{Binding X48}" Content="48x48"></CheckBox>
+                <CheckBox IsChecked="{Binding X64}" Content="64x64"></CheckBox>
+                <CheckBox IsChecked="{Binding X96}" Content="96x96"></CheckBox>
+                <CheckBox IsChecked="{Binding X128}" Content="128x128"></CheckBox>
+                <CheckBox IsChecked="{Binding X256}" Content="256x256"></CheckBox>
+            </hc:UniformSpacingPanel>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Button Style="{StaticResource ButtonPrimary}" Content="立即转换" HorizontalAlignment="Left" Width="128" Margin="70,0" Command="{Binding ConvertCommand}"></Button>
+        </StackPanel>
+    </hc:UniformSpacingPanel>
+</UserControl>

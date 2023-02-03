@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="LuYao.Toolkit.Channels.Gens.GenGuid"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:LuYao.Toolkit.Channels.Gens"
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             xmlns:ctrls="clr-namespace:LuYao.Toolkit.Controls"
+             xmlns:editor="http://icsharpcode.net/sharpdevelop/avalonedit"
+             xmlns:bh="clr-namespace:LuYao.Toolkit.Behaviors"
+             xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+             xmlns:icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             d:Background="{DynamicResource RegionBrush}"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Style TargetType="{x:Type ctrls:FormItemContainer}" BasedOn="{StaticResource {x:Type ctrls:FormItemContainer}}">
+            <Setter Property="PrefixWidth" Value="75" />
+        </Style>
+    </UserControl.Resources>
+    <Border HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15" >
+        <hc:UniformSpacingPanel Orientation="Vertical" Spacing="10" >
+            <ItemsControl ItemsSource="{Binding Formats}" x:Name="itemFormats">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <hc:UniformSpacingPanel Spacing="10" Orientation="Vertical" ItemHorizontalAlignment="Left"></hc:UniformSpacingPanel>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <CheckBox Content="{Binding Name}" IsChecked="{Binding IsSelected}" CommandParameter="{Binding .}" Command="{Binding ElementName=itemFormats,Path=DataContext.SelectCommand}"/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+            <GroupBox Header="结果" Style="{DynamicResource GroupBoxTab}" Width="350" Height="100">
+                <TextBlock Text="{Binding Result}" Margin="5" TextWrapping="Wrap"></TextBlock>
+            </GroupBox>
+            <hc:UniformSpacingPanel ItemWidth="128" Spacing="5">
+                <Button Style="{DynamicResource ButtonPrimary}" Content="重新生成" Command="{Binding GenCommand}"></Button>
+                <Button Style="{DynamicResource ButtonInfo}" Content="复制结果" Command="{Binding CopyCommand}"></Button>
+            </hc:UniformSpacingPanel>
+        </hc:UniformSpacingPanel>
+    </Border>
+</UserControl>

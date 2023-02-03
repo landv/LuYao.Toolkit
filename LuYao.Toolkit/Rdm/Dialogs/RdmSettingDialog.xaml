@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="LuYao.Toolkit.Rdm.Dialogs.RdmSettingDialog"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LuYao.Toolkit.Rdm.Dialogs"
+             xmlns:dialogs="clr-namespace:LuYao.Toolkit.Dialogs"
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             mc:Ignorable="d" 
+             xmlns:prism="http://prismlibrary.com/"
+             d:DesignHeight="300" d:DesignWidth="400">
+    <prism:Dialog.WindowStyle>
+        <Style BasedOn="{StaticResource DialogWindowBase}" TargetType="dialogs:DialogWindow">
+            <Setter Property="prism:Dialog.WindowStartupLocation" Value="CenterOwner" />
+            <Setter Property="ResizeMode" Value="NoResize"/>
+            <Setter Property="ShowInTaskbar" Value="False"/>
+            <Setter Property="SizeToContent" Value="WidthAndHeight"/>
+            <Setter Property="MinWidth" Value="400" />
+            <Setter Property="MinHeight" Value="300" />
+        </Style>
+    </prism:Dialog.WindowStyle>
+    <TabControl>
+        <TabItem Header="分组管理">
+            <DockPanel Margin="10">
+                <hc:UniformSpacingPanel DockPanel.Dock="Bottom" Spacing="10" ItemWidth="60">
+                    <Button Content="添加" Command="{Binding AddGroupCommand}"></Button>
+                    <Button Content="编辑" Command="{Binding EditGroupCommand}"></Button>
+                    <Button Content="删除" Command="{Binding DeleteGroupCommand}"></Button>
+                    <Button Content="上移" Command="{Binding UpGroupCommand}"></Button>
+                    <Button Content="下移" Command="{Binding DownGroupCommand}"></Button>
+                </hc:UniformSpacingPanel>
+                <ListBox SelectedItem="{Binding CurrentGroup}" ItemsSource="{Binding Groups}" Margin="0,0,0,10" DisplayMemberPath="Name"></ListBox>
+            </DockPanel>
+        </TabItem>
+    </TabControl>
+</UserControl>

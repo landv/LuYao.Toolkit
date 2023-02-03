@@ -1,0 +1,8 @@
+﻿<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:hc="https://handyorg.github.io/handycontrol"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style x:Key="DialogWindowBase" TargetType="hc:Window" BasedOn="{StaticResource WindowWin10}">
+        <Setter Property="SizeToContent" Value="WidthAndHeight" />
+    </Style>
+</ResourceDictionary>

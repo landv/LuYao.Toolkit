@@ -1,0 +1,8 @@
+﻿11:36:01.101  1 N - 导入模型：D:\src\coderbusy\luyao\src\toolkit\LuYao.Toolkit.Core\Entities\LuYao.Toolkit.xml
+11:36:01.187  1 N - 生成实体类 D:\src\coderbusy\luyao\src\toolkit\LuYao.Toolkit.Core\Entities
+11:36:01.190  1 N - 生成 ViewModelState ViewModelState {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+11:36:01.202  1 N - 生成 ViewModelState ViewModelState {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+11:36:01.216  1 N - 生成 ChannelItemSession ChannelItemSession {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+11:36:01.217  1 N - 生成 ChannelItemSession ChannelItemSession {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+11:36:01.217  1 N - 生成 RdpConnection RdpConnection {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+11:36:01.226  1 N - 生成 RdpConnection RdpConnection {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}

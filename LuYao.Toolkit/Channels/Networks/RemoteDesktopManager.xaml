@@ -1,0 +1,76 @@
+﻿<UserControl x:Class="LuYao.Toolkit.Channels.Networks.RemoteDesktopManager"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LuYao.Toolkit.Channels.Networks"
+             mc:Ignorable="d" 
+             xmlns:icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             Background="{DynamicResource RegionBrush}"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <DockPanel>
+        <hc:UniformSpacingPanel Spacing="10" DockPanel.Dock="Top" Margin="15,15,15,10">
+            <hc:ComboBox Width="150" ItemsSource="{Binding Groups}" SelectedItem="{Binding Input.Group}" DisplayMemberPath="Name"></hc:ComboBox>
+            <hc:TextBox hc:InfoElement.ShowClearButton="True" Text="{Binding Input.Keyword,UpdateSourceTrigger=PropertyChanged}" Width="150" hc:InfoElement.Placeholder="关键字"></hc:TextBox>
+            <Button Width="70" Content="搜索" IsDefault="True" Style="{DynamicResource ButtonInfo}" Command="{Binding SearchCommand}"></Button>
+        </hc:UniformSpacingPanel>
+        <hc:UniformSpacingPanel Spacing="10" DockPanel.Dock="Bottom" Margin="15,10,15,10" ItemWidth="75">
+            <Button Content="添加" Command="{Binding AddCommand}" Style="{DynamicResource ButtonPrimary}"></Button>
+            <Button Content="批量删除" Style="{DynamicResource ButtonDanger}" Command="{Binding DeleteCommand}" CommandParameter="{Binding ElementName=dgConnections,Path=SelectedItems}"></Button>
+            <Button Content="导入" Style="{DynamicResource ButtonDefault}" Command="{Binding ImportCommand}"></Button>
+            <Button Content="导出" Style="{DynamicResource ButtonDefault}" Command="{Binding ExportCommand}" CommandParameter="{Binding ElementName=dgConnections,Path=SelectedItems}"></Button>
+            <Button Content="设置" Style="{DynamicResource ButtonInfo}" Command="{Binding OpenSettingCommand}"></Button>
+        </hc:UniformSpacingPanel>
+        <DataGrid x:Name="dgConnections" BorderThickness="0,1" ItemsSource="{Binding Connections}" SelectionMode="Extended" HeadersVisibility="All" RowHeaderWidth="60"
+                  hc:BorderElement.CornerRadius="0"
+                  >
+            <hc:Interaction.Triggers>
+                <hc:EventTrigger EventName="MouseDoubleClick" >
+                    <hc:EventToCommand Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=DataGrid},Path=DataContext.OpenCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=DataGrid},Path=SelectedItem}"></hc:EventToCommand>
+                </hc:EventTrigger>
+            </hc:Interaction.Triggers>
+            <DataGrid.RowHeaderTemplate>
+                <DataTemplate>
+                    <CheckBox IsChecked="{Binding IsSelected,RelativeSource={RelativeSource AncestorType=DataGridRow}}"/>
+                </DataTemplate>
+            </DataGrid.RowHeaderTemplate>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="名称" MinWidth="128" Width="*" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="主机" MinWidth="128" Width="Auto" Binding="{Binding Host}"></DataGridTextColumn>
+                <DataGridTextColumn Header="用户名" MinWidth="100" Width="Auto" Binding="{Binding Username}"></DataGridTextColumn>
+                <DataGridTemplateColumn Header="操作" MinWidth="100" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <hc:ButtonGroup Orientation="Horizontal">
+                                <Button ToolTip="立即链接" 
+                                        CommandParameter="{Binding .}" 
+                                        Command="{Binding RelativeSource={RelativeSource AncestorType=DataGrid},Path=DataContext.OpenCommand}" 
+                                        >
+                                    <icon:PackIconMaterial Kind="Connection" Foreground="{DynamicResource PrimaryBrush}"></icon:PackIconMaterial>
+                                </Button>
+                                <Button 
+                                    ToolTip="编辑" 
+                                    CommandParameter="{Binding .}" 
+                                    Command="{Binding RelativeSource={RelativeSource AncestorType=DataGrid},Path=DataContext.EditCommand}"
+                                    >
+                                    <icon:PackIconMaterial Kind="LeadPencil" Height="14" Foreground="{DynamicResource InfoBrush}"></icon:PackIconMaterial>
+                                </Button>
+                            </hc:ButtonGroup>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+
+            <DataGrid.GroupStyle>
+                <GroupStyle >
+                    <GroupStyle.HeaderTemplate>
+                        <DataTemplate>
+                            <hc:Divider Margin="0,5,0,10" Content="{Binding Name}" HorizontalAlignment="Stretch" HorizontalContentAlignment="Left" ></hc:Divider>
+                        </DataTemplate>
+                    </GroupStyle.HeaderTemplate>
+                </GroupStyle>
+            </DataGrid.GroupStyle>
+        </DataGrid>
+    </DockPanel>
+</UserControl>

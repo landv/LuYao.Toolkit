@@ -1,0 +1,344 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_LastSelectedProfileId>D:\src\coderbusy\luyao\src\toolkit\LuYao.Toolkit\Properties\PublishProfiles\FolderProfile.pubxml</_LastSelectedProfileId>
+    <ActiveDebugFramework>net462</ActiveDebugFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Update="Channels\Converts\ColorConverter.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Channels\Converts\IndentJson.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Channels\Converts\JsonToCSharp.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Channels\Converts\JsonToCsv.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Channels\Converts\PostmanConverter.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Channels\Converts\RsaKeyConvert.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Channels\Converts\TranslateJsonByJs.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Channels\Converts\TranslateXmlByXsl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Channels\Converts\UnixTimestamp.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Channels\Converts\YamlToJson.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Channels\CrossBorder\MercadoToWorldFirst.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Channels\Encodings\Ascii85Encode.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Channels\Encodings\Base16Encode.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Channels\Encodings\Base62Encode.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Channels\Encodings\Base64Encode.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Channels\Encodings\HtmlEncode.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Channels\Encodings\StringZipper.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Channels\Encodings\UrlEncode.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Channels\Files\DetectFileEncodeing.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Channels\Gens\GenLinesByRange.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Channels\Images\Base64ToImage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Channels\Images\GifSplitter.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Channels\Images\ImageToIcon.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Channels\Networks\HttpProxyChecker.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Channels\Other\SystemToolkit.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Channels\Texts\HashCalculator.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Channels\Files\HashFile.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Channels\Gens\GenXCodeEntity.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Channels\Networks\IPLookup.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Channels\Networks\Ping.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Channels\Networks\UrlAnalyzer.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Channels\Networks\UserAgentParser.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Channels\Networks\Whois.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Channels\Texts\FullHalfConvert.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Channels\Texts\GoogleTranslate.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Channels\Texts\LogReader.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Channels\Texts\RegexEvaluator.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Channels\Texts\TextJoin.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Channels\Texts\YoudaoDictionary.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Controls\CodeEditor.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Controls\FileSelector.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Dialogs\DialogWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Dialogs\MultiboxingDialogWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Dialogs\MultiboxingDialog.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Rdm\RdpSession.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Tabs\Navs\Index.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Tabs\Session\Index.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Tabs\Rdp\Index.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Update\FindNewVersionDialog.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Update\Update.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Channels\Converts\ColorConverter.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Channels\Converts\IndentJson.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Channels\Converts\JsonToCSharp.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Channels\Converts\JsonToCsv.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Channels\Converts\PostmanConverter.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Channels\Converts\RsaKeyConvert.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Channels\Converts\TranslateJsonByJs.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Channels\Converts\TranslateXmlByXsl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Channels\Converts\UnixTimestamp.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Channels\Converts\YamlToJson.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Channels\CrossBorder\MercadoToWorldFirst.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Channels\Encodings\Ascii85Encode.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Channels\Encodings\Base16Encode.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Channels\Encodings\Base62Encode.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Channels\Encodings\Base64Encode.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Channels\Encodings\HtmlEncode.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Channels\Encodings\StringZipper.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Channels\Encodings\UrlEncode.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Channels\Files\DetectFileEncodeing.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Channels\Gens\GenLinesByRange.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Channels\Images\Base64ToImage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Channels\Images\GifSplitter.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Channels\Images\ImageToIcon.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Channels\Networks\HttpProxyChecker.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Channels\Other\SystemToolkit.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Channels\Texts\HashCalculator.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Channels\Files\HashFile.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Channels\Gens\GenXCodeEntity.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Channels\Networks\IPLookup.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Channels\Networks\Ping.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Channels\Networks\UrlAnalyzer.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Channels\Networks\UserAgentParser.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Channels\Networks\Whois.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Channels\Texts\FullHalfConvert.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Channels\Texts\GoogleTranslate.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Channels\Texts\LogReader.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Channels\Texts\RegexEvaluator.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Channels\Texts\TextJoin.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Channels\Texts\YoudaoDictionary.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\AvalonEdit\SearchPanel.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\CodeEditor.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\DirectorySelector.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\FileSelector.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Dialogs\DialogWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Dialogs\MultiboxingDialogWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Dialogs\MultiboxingDialog.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Tabs\Navs\Index.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Tabs\Session\Index.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Tabs\Rdp\Index.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Themes\Basic\Converters.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Themes\Controls\DataGrid.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Themes\Controls\FormItemContainer.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Themes\Controls\RdpTabItemHeader.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Themes\Controls\TextEditor.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Themes\Controls\Window.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Themes\SkinDark.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Themes\Generic.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Themes\SkinDefault.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Themes\Theme.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Update\FindNewVersionDialog.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Update\Update.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

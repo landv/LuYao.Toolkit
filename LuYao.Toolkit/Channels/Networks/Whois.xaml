@@ -1,0 +1,39 @@
+﻿<UserControl x:Class="LuYao.Toolkit.Channels.Networks.Whois"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LuYao.Toolkit.Channels.Networks"
+             xmlns:bh="clr-namespace:LuYao.Toolkit.Behaviors"
+             xmlns:avalonedit="http://icsharpcode.net/sharpdevelop/avalonedit"
+             xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+      mc:Ignorable="d" 
+             d:Background="{DynamicResource RegionBrush}"
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             Padding="15,15,15,10"
+      d:DesignHeight="450" d:DesignWidth="800">
+
+    <DockPanel>
+        <hc:UniformSpacingPanel DockPanel.Dock="Top" Spacing="10">
+            <hc:TextBox Text="{Binding Input,UpdateSourceTrigger=PropertyChanged}" Width="300" hc:InfoElement.Placeholder="请输入要查询的域名或 IP 地址，无需输入 HTTP 。">
+                <hc:TextBox.InputBindings>
+                    <KeyBinding Key="Enter" Command="{Binding QueryCommand}" />
+                </hc:TextBox.InputBindings>
+            </hc:TextBox>
+            <Button Style="{DynamicResource ButtonPrimary}" Command="{Binding QueryCommand}" Content="查询 Whois" Width="128"></Button>
+        </hc:UniformSpacingPanel>
+        <TabControl Margin="0,15,0,0" ItemsSource="{Binding Items}" SelectedItem="{Binding Current}" >
+            <TabControl.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Server}"></TextBlock>
+                </DataTemplate>
+            </TabControl.ItemTemplate>
+            <TabControl.ContentTemplate>
+                <DataTemplate>
+                    <TextBox IsReadOnly="True" Margin="0,10,0,0" BorderThickness="0" Text="{Binding Result}" BorderBrush="{DynamicResource BorderBrush}" VerticalAlignment="Top" VerticalScrollBarVisibility="Auto" hc:BorderElement.CornerRadius="0"  Padding="0">
+                    </TextBox>
+                </DataTemplate>
+            </TabControl.ContentTemplate>
+        </TabControl>
+    </DockPanel>
+</UserControl>

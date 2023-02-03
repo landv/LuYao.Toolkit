@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="LuYao.Toolkit.Channels.Converts.RsaKeyConvert"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LuYao.Toolkit.Channels.Converts"
+             mc:Ignorable="d" 
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             d:Background="{DynamicResource RegionBrush}"
+             Padding="15,15,15,10"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Text="RSA 私钥："></TextBlock>
+        <hc:SimplePanel Grid.Row="1" Margin="0,10,0,0">
+            <TextBox Text="{Binding PrivateKey}" hc:BorderElement.CornerRadius="0" TextWrapping="Wrap" VerticalContentAlignment="Top" VerticalScrollBarVisibility="Auto" AcceptsReturn="True"></TextBox>
+            <Button Visibility="Hidden" Style="{DynamicResource ButtonInfo}" Width="128" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="16" Content="从文件读入"></Button>
+        </hc:SimplePanel>
+        <hc:UniformSpacingPanel Spacing="10" Grid.Row="2" Margin="0,10,0,0">
+            <Button Content="转PKCS8私钥" Command="{Binding ToPkcs8Command}"></Button>
+            <Button Content="转PKCS1私钥" Command="{Binding ToPkcs1Command}"></Button>
+            <Button Content="转 XML 私钥" Command="{Binding ToXmlCommand}"></Button>
+            <Button Content="提取公钥" Command="{Binding GetPublickKeyCommand}"></Button>
+            <Button Content="提取 XML 公钥" Command="{Binding GetPublickKeyXmlCommand}"></Button>
+        </hc:UniformSpacingPanel>
+        <hc:SimplePanel Grid.Row="3" Margin="0,10,0,0">
+            <TextBox Text="{Binding Output}" IsReadOnly="True" hc:BorderElement.CornerRadius="0" TextWrapping="Wrap" VerticalContentAlignment="Top" VerticalScrollBarVisibility="Auto" AcceptsReturn="True"></TextBox>
+            <Button Width="64" Visibility="{Binding Output,Converter={StaticResource String2VisibilityConverter}}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Command="{Binding CopyOutputCommand}" Margin="16" Content="复制"></Button>
+        </hc:SimplePanel>
+    </Grid>
+</UserControl>

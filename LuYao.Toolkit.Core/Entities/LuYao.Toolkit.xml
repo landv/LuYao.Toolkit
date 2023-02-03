@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Tables xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:schemaLocation="https://newlifex.com https://newlifex.com/Model2022.xsd" NameSpace="LuYao.Toolkit.Entities" ConnName="LuYao.Toolkit" BaseClass="Entity" Output="." Version="11.5.2022.1201" Document="https://newlifex.com/xcode/model" DisplayName="" CubeOutput="" xmlns="https://newlifex.com/Model2022.xsd">
+  <Table Name="ViewModelState">
+    <Columns>
+      <Column Name="Id" DataType="Int32" Identity="True" PrimaryKey="True" Description="自增主键" />
+      <Column Name="CreatedAt" DataType="DateTime" Description="创建时间" />
+      <Column Name="UpdatedAt" DataType="DateTime" Description="更新时间" />
+      <Column Name="Type" DataType="String" Length="512" Description="类型" />
+      <Column Name="Value" DataType="String" Length="-1" Description="值" />
+    </Columns>
+    <Indexes>
+      <Index Columns="Type" Unique="True" />
+    </Indexes>
+  </Table>
+  <Table Name="ChannelItemSession">
+    <Columns>
+      <Column Name="Id" DataType="Guid" PrimaryKey="True" Description="主键" />
+      <Column Name="CreatedAt" DataType="DateTime" Description="创建时间" />
+      <Column Name="LastClick" DataType="DateTime" Description="最后点击" />
+      <Column Name="IsFavorite" DataType="Int32" Description="收藏" />
+    </Columns>
+    <Indexes>
+      <Index Columns="CreatedAt" />
+      <Index Columns="LastClick" />
+      <Index Columns="IsFavorite" />
+    </Indexes>
+  </Table>
+  <Table Name="RdpGroup">
+    <Columns>
+      <Column Name="Id" DataType="Guid" PrimaryKey="True" Description="主键" />
+      <Column Name="CreatedAt" DataType="DateTime" Description="创建时间" />
+      <Column Name="UpdatedAt" DataType="DateTime" Description="更新时间" />
+      <Column Name="Name" DataType="String" Master="True" Description="名称" />
+      <Column Name="Rank" DataType="Int32" Description="排序" />
+    </Columns>
+  </Table>
+  <Table Name="RdpConnection">
+    <Columns>
+      <Column Name="Id" DataType="Guid" PrimaryKey="True" Description="主键" />
+      <Column Name="CreatedAt" DataType="DateTime" Description="创建时间" />
+      <Column Name="UpdatedAt" DataType="DateTime" Description="更新时间" />
+      <Column Name="Name" DataType="String" Master="True" Description="名称" />
+      <Column Name="GroupId" DataType="Guid" Description="分组编号" />
+      <Column Name="Remark" DataType="String" Length="255" Description="备注" />
+      <Column Name="Host" DataType="String" />
+      <Column Name="Port" DataType="Int32" />
+      <Column Name="Domain" DataType="String" />
+      <Column Name="Username" DataType="String" />
+      <Column Name="Password" DataType="String" />
+      <Column Name="ConnectToConsole" DataType="Boolean" />
+      <Column Name="DesktopSize" DataType="Int32" />
+      <Column Name="DisplayWidth" DataType="Int32" />
+      <Column Name="DisplayHeight" DataType="Int32" />
+      <Column Name="AutoExpand" DataType="Boolean" />
+      <Column Name="SmartSizing" DataType="Boolean" />
+      <Column Name="ColorDepth" DataType="Int32" />
+      <Column Name="AudioSetting" DataType="Int32" />
+      <Column Name="KeyboardSetting" DataType="Int32" />
+      <Column Name="RedirectDisks" DataType="Boolean" />
+      <Column Name="RedirectPorts" DataType="Boolean" />
+      <Column Name="RedirectPrinters" DataType="Boolean" />
+      <Column Name="RedirectSmartCards" DataType="Boolean" />
+      <Column Name="BitmapCaching" DataType="Boolean" />
+      <Column Name="AllowWallpaper" DataType="Boolean" />
+      <Column Name="AllowThemes" DataType="Boolean" />
+      <Column Name="AllowContents" DataType="Boolean" />
+      <Column Name="AllowAnimation" DataType="Boolean" />
+      <Column Name="AuthenticationLevel" DataType="Int32" />
+      <Column Name="EnableCredSspSupport" DataType="Boolean" />
+    </Columns>
+  </Table>
+  <Table Name="PortProxyRule" Description="端口转发规则">
+    <Columns>
+      <Column Name="Id" DataType="Int32" Identity="True" PrimaryKey="True" Description="主键" />
+      <Column Name="Type" DataType="String" />
+      <Column Name="GroupName" DataType="String" Length="255" />
+      <Column Name="ListenOn" DataType="String" />
+      <Column Name="ListenPort" DataType="String" />
+      <Column Name="ConnectTo" DataType="String" Length="255" />
+      <Column Name="ConnectPort" DataType="String" />
+      <Column Name="Comment" DataType="String" Length="-1" />
+    </Columns>
+  </Table>
+</Tables>

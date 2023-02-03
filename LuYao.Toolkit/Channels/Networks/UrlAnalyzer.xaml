@@ -1,0 +1,79 @@
+﻿<UserControl x:Class="LuYao.Toolkit.Channels.Networks.UrlAnalyzer"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LuYao.Toolkit.Channels.Networks"
+             xmlns:controls="clr-namespace:LuYao.Toolkit.Controls"
+             mc:Ignorable="d" 
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             d:Background="{DynamicResource RegionBrush}"
+             Padding="15,15,15,10"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <DockPanel>
+        <hc:UniformSpacingPanel Orientation="Vertical" Spacing="10" DockPanel.Dock="Top">
+            <Border Visibility="{Binding Output,Converter={StaticResource String2VisibilityConverter}}" Style="{DynamicResource BorderTipDanger}">
+                <TextBlock  Text="{Binding Output}"/>
+            </Border>
+            <hc:TextBox TextWrapping="Wrap" VerticalContentAlignment="Top" MinHeight="75" Text="{Binding Url, UpdateSourceTrigger=PropertyChanged}" hc:InfoElement.Placeholder="要分析的 URL，回车分析。">
+                <hc:TextBox.InputBindings>
+                    <KeyBinding Command="{Binding AnalyzeCommand}" Key="Enter"></KeyBinding>
+                </hc:TextBox.InputBindings>
+            </hc:TextBox>
+            <StackPanel Orientation="Horizontal">
+                <Button Command="{Binding AnalyzeCommand}" Width="128" HorizontalAlignment="Left" Content="分析" Style="{DynamicResource ButtonPrimary}"></Button>
+            </StackPanel>
+        </hc:UniformSpacingPanel>
+        <hc:TabControl Visibility="{Binding IsAbsoluteUri,Converter={StaticResource Boolean2VisibilityConverter}}" >
+            <hc:TabControl.Resources>
+                <Style TargetType="hc:TextBox" BasedOn="{StaticResource TextBoxExtend}">
+                    <Setter Property="IsReadOnly" Value="True" />
+                    <Setter Property="TextWrapping" Value="Wrap" />
+                </Style>
+            </hc:TabControl.Resources>
+            <hc:TabItem Header="基础信息">
+                <Border Background="{DynamicResource RegionBrush}">
+                    <hc:ScrollViewer VerticalScrollBarVisibility="Auto" Padding="15" >
+                        <hc:UniformSpacingPanel Orientation="Vertical" Spacing="10" >
+                            <hc:TextBox hc:InfoElement.Title="AbsolutePath" Text="{Binding Uri.AbsolutePath,Mode=OneWay}" />
+                            <hc:TextBox hc:InfoElement.Title="AbsoluteUri" Text="{Binding Uri.AbsoluteUri,Mode=OneWay}" />
+                            <hc:TextBox hc:InfoElement.Title="Authority" Text="{Binding Uri.Authority,Mode=OneWay}" />
+                            <hc:TextBox hc:InfoElement.Title="HostNameType" Text="{Binding Uri.HostNameType,Mode=OneWay}" />
+                            <hc:TextBox hc:InfoElement.Title="IsDefaultPort" Text="{Binding Uri.IsDefaultPort,Mode=OneWay}" />
+                            <hc:TextBox hc:InfoElement.Title="IsFile" Text="{Binding Uri.IsFile,Mode=OneWay}" />
+                            <hc:TextBox hc:InfoElement.Title="IsLoopback" Text="{Binding Uri.IsLoopback,Mode=OneWay}" />
+                            <hc:TextBox hc:InfoElement.Title="PathAndQuery" Text="{Binding Uri.PathAndQuery,Mode=OneWay}" />
+                            <hc:TextBox hc:InfoElement.Title="IsUnc" Text="{Binding Uri.IsUnc,Mode=OneWay}" />
+                            <hc:TextBox hc:InfoElement.Title="Port" Text="{Binding Uri.Port,Mode=OneWay}" />
+                            <hc:TextBox hc:InfoElement.Title="Fragment" Text="{Binding Uri.Fragment,Mode=OneWay}" />
+                            <hc:TextBox hc:InfoElement.Title="Scheme" Text="{Binding Uri.Scheme,Mode=OneWay}" />
+                            <hc:TextBox hc:InfoElement.Title="DnsSafeHost" Text="{Binding Uri.DnsSafeHost,Mode=OneWay}" />
+                            <hc:TextBox hc:InfoElement.Title="IdnHost" Text="{Binding Uri.IdnHost,Mode=OneWay}" />
+                            <hc:TextBox hc:InfoElement.Title="IsAbsoluteUri" Text="{Binding Uri.IsAbsoluteUri,Mode=OneWay}" />
+                            <hc:TextBox hc:InfoElement.Title="UserEscaped" Text="{Binding Uri.UserEscaped,Mode=OneWay}" />
+                            <hc:TextBox hc:InfoElement.Title="UserInfo" Text="{Binding Uri.UserInfo,Mode=OneWay}" />
+                        </hc:UniformSpacingPanel>
+                    </hc:ScrollViewer>
+                </Border>
+            </hc:TabItem>
+            <hc:TabItem Header="Query String">
+                <Border Background="{DynamicResource RegionBrush}">
+                    <hc:ScrollViewer VerticalScrollBarVisibility="Auto" Padding="15">
+                        <ItemsControl ItemsSource="{Binding QueryString}" >
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <hc:UniformSpacingPanel Orientation="Vertical" Spacing="10"></hc:UniformSpacingPanel>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <hc:TextBox Text="{Binding Value,Mode=OneWay}" IsEnabled="True" hc:TitleElement.Title="{Binding Key}"></hc:TextBox>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </hc:ScrollViewer>
+                </Border>
+            </hc:TabItem>
+        </hc:TabControl>
+    </DockPanel>
+</UserControl>

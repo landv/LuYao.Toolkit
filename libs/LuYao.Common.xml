@@ -1,0 +1,534 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LuYao.Common</name>
+    </assembly>
+    <members>
+        <member name="T:LuYao.DisposableBase">
+            <summary>
+            释放基类
+            </summary>
+        </member>
+        <member name="P:LuYao.DisposableBase.Disposed">
+            <summary>
+            是否已释放
+            </summary>
+        </member>
+        <member name="M:LuYao.DisposableBase.Dispose(System.Boolean)">
+            <summary>
+            释放资源
+            </summary>
+            <param name="disposing">是否释放中</param>
+        </member>
+        <member name="M:LuYao.DisposableBase.Dispose">
+            <summary>
+            释放资源。执行与释放或重置非托管资源关联的应用程序定义的任务
+            </summary>
+        </member>
+        <member name="M:LuYao.DisposableBase.Finalize">
+            <summary>
+            析构函数
+            </summary>
+        </member>
+        <member name="T:LuYao.DisposeAction">
+            <summary>
+            This class can be used to provide an action when
+            Dipose method is called.
+            </summary>
+        </member>
+        <member name="M:LuYao.DisposeAction.#ctor(System.Action)">
+            <summary>
+            Creates a new <see cref="T:LuYao.DisposeAction"/> object.
+            </summary>
+            <param name="action">Action to be executed when this object is disposed.</param>
+        </member>
+        <member name="T:LuYao.Enum`1">
+            <summary>
+            Strongly typed version of Enum with Parsing and performance improvements.
+            </summary>
+            <typeparam name="T">Type of Enum</typeparam>
+        </member>
+        <member name="M:LuYao.IO.FileUtil.GetMimeType(System.String)">
+            <summary>
+                根据文件后缀来获取MIME类型字符串
+            </summary>
+            <param name="extension">文件后缀</param>
+            <returns></returns>
+        </member>
+        <member name="P:LuYao.IO.Updating.UpdateFilePackage.PackageHash">
+            <summary>
+                升级包的校验值
+            </summary>
+        </member>
+        <member name="P:LuYao.IO.Updating.UpdateFilePackage.PackageSize">
+            <summary>
+                升级包大小
+            </summary>
+        </member>
+        <member name="P:LuYao.IO.Updating.UpdateFilePackage.Url">
+            <summary>
+                升级包路径
+            </summary>
+        </member>
+        <member name="P:LuYao.IO.Updating.UpdateFilePackage.FilePath">
+            <summary>
+                文件路径
+            </summary>
+        </member>
+        <member name="P:LuYao.IO.Updating.UpdateFilePackage.FileSize">
+            <summary>
+                文件大小
+            </summary>
+        </member>
+        <member name="P:LuYao.IO.Updating.UpdateFilePackage.FileHash">
+            <summary>
+                文件校验值
+            </summary>
+        </member>
+        <member name="P:LuYao.IO.Updating.UpdateFilePackage.FileVersion">
+            <summary>
+            文件版本
+            </summary>
+        </member>
+        <member name="T:LuYao.Net.Proxies.IWebProxySource">
+            <summary>
+            代理服务器源
+            </summary>
+        </member>
+        <member name="M:LuYao.Net.Proxies.ProxiedHttpClientHandlerPool`1.Create(System.Net.IWebProxy)">
+            <summary>
+            使用代理服务器创建 <see cref="!:THttpClientHandler"/>
+            </summary>
+            <param name="proxy"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LuYao.Net.Proxies.ProxiedHttpClientHandlerPool`1.GetWebProxy(`0)">
+            <summary>
+            从 <see cref="!:THttpClientHandler"/> 提取
+            </summary>
+            <param name="handler"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LuYao.Net.Proxies.ProxiedHttpClientHandlerPool`1.Reset(`0)">
+            <summary>
+            重置 <see cref="!:THttpClientHandler"/> 以便下次重用
+            </summary>
+            <param name="handler"></param>
+        </member>
+        <member name="T:LuYao.Net.Proxies.SimpleWebProxySource">
+            <summary>
+            基于 Http 链接的数据源
+            </summary>
+        </member>
+        <member name="P:LuYao.Net.Proxies.SimpleWebProxySource.Endpoint">
+            <summary>
+            提取地址
+            </summary>
+        </member>
+        <member name="P:LuYao.Net.Proxies.SimpleWebProxySource.Username">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:LuYao.Net.Proxies.SimpleWebProxySource.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="T:LuYao.Net.Proxies.WebProxySource">
+            <summary>
+            代理服务器源
+            </summary>
+        </member>
+        <member name="E:LuYao.Net.Proxies.WebProxySource.Arrival">
+            <summary>
+            当发现新的代理服务器时
+            </summary>
+        </member>
+        <member name="E:LuYao.Net.Proxies.WebProxySource.Invalided">
+            <summary>
+            当代理服务器失效时
+            </summary>
+        </member>
+        <member name="F:LuYao.Net.Proxies.WebProxySource.DefaultFetchInterval">
+            <summary>
+            默认提取间隔
+            </summary>
+        </member>
+        <member name="F:LuYao.Net.Proxies.WebProxySource.DefaultAge">
+            <summary>
+            默认可用有效期
+            </summary>
+        </member>
+        <member name="P:LuYao.Net.Proxies.WebProxySource.FetchInterval">
+            <summary>
+            代理服务器提取间隔
+            </summary>
+        </member>
+        <member name="P:LuYao.Net.Proxies.WebProxySource.Age">
+            <summary>
+            代理服务器有效期
+            </summary>
+        </member>
+        <member name="M:LuYao.Net.Proxies.WebProxySource.Refresh">
+            <summary>
+            刷新数据源
+            </summary>
+        </member>
+        <member name="T:LuYao.Security.Cryptography.Crc32">
+            <summary>
+            Implements a 32-bit CRC hash algorithm compatible with Zip etc.
+            </summary>
+            <remarks>
+            Crc32 should only be used for backward compatibility with older file formats
+            and algorithms. It is not secure enough for new applications.
+            If you need to call multiple times for the same data either use the HashAlgorithm
+            interface or remember that the result of one Compute call needs to be ~ (XOR) before
+            being passed in as the seed for the next Compute call.
+            </remarks>
+        </member>
+        <member name="M:LuYao.Security.Cryptography.Crc32.#ctor">
+            <summary>
+            Create a new <see cref="T:LuYao.Security.Cryptography.Crc32"/> with a <see cref="F:LuYao.Security.Cryptography.Crc32.DefaultPolynomial"/> and <see cref="F:LuYao.Security.Cryptography.Crc32.DefaultSeed"/>.
+            </summary>
+        </member>
+        <member name="M:LuYao.Security.Cryptography.Crc32.#ctor(System.UInt32,System.UInt32,System.UInt32,System.Boolean,System.Boolean)">
+            <summary>
+            Create a new <see cref="T:LuYao.Security.Cryptography.Crc32"/> with a supplied polynomial, seed, and algorithm options..
+            Note: the "default" CRC32 algorithm reflects both input and output, then flips all bits (XorOut = 0xFFFFFFFF). 
+            </summary>
+            <param name="polynomial">The polynomial to use in calculating.</param>
+            <param name="polynomial">The initial seed to start from.</param>
+        </member>
+        <member name="M:LuYao.Security.Cryptography.Crc32.Initialize">
+            <inheritdoc/>
+        </member>
+        <member name="M:LuYao.Security.Cryptography.Crc32.HashCore(System.Byte[],System.Int32,System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:LuYao.Security.Cryptography.Crc32.HashFinal">
+            <inheritdoc/>
+        </member>
+        <member name="P:LuYao.Security.Cryptography.Crc32.HashSize">
+            <inheritdoc/>
+        </member>
+        <member name="M:LuYao.Security.Cryptography.Crc32.Compute(System.Byte[])">
+            <summary>
+            Calculate the <see cref="T:LuYao.Security.Cryptography.Crc32"/> for a given <paramref name="buffer"/> with the
+            <see cref="F:LuYao.Security.Cryptography.Crc32.DefaultSeed"/> and <see cref="F:LuYao.Security.Cryptography.Crc32.DefaultPolynomial"/>.
+            </summary>
+            <param name="buffer">The <see cref="!:byte[]"/> buffer to calcuate a CRC32 for.</param>
+            <returns>The CRC32 for the buffer.</returns>
+        </member>
+        <member name="M:LuYao.Security.Cryptography.Crc32.Compute(System.UInt32,System.Byte[])">
+            <summary>
+            Calculate the <see cref="T:LuYao.Security.Cryptography.Crc32"/> for a given <paramref name="buffer"/> with a
+            specified <paramref name="seed"/> and <see cref="F:LuYao.Security.Cryptography.Crc32.DefaultPolynomial"/>.
+            </summary>
+            <param name="seed">The initial seed to start from.</param>
+            <param name="buffer">The <see cref="!:byte[]"/> buffer to calcuate a CRC32 for.</param>
+            <returns>The CRC32 for the buffer.</returns>
+        </member>
+        <member name="M:LuYao.Security.Cryptography.Crc32.Compute(System.UInt32,System.UInt32,System.Byte[])">
+            <summary>
+            Calculate the <see cref="T:LuYao.Security.Cryptography.Crc32"/> for a given <paramref name="buffer"/> with a
+            specified <paramref name="seed"/> and <paramref name="polynomial"/>.
+            </summary>
+            <param name="seed">The initial seed to start from.</param>
+            <param name="buffer">The <see cref="!:byte[]"/> buffer to calcuate a CRC32 for.</param>
+            <returns>The CRC32 for the buffer.</returns>
+        </member>
+        <member name="M:LuYao.Security.Cryptography.Crc32.InitializeTable(System.UInt32,System.Boolean)">
+            <summary>
+            Initialize a CRC32 calculation table for a given polynomial.
+            </summary>
+            <param name="polynomial">The polynomial to calculate a table for.</param>
+            <returns>A <see cref="!:UInt32[]"/> table to be used in calculating a CRC32.</returns>
+        </member>
+        <member name="M:LuYao.Security.Cryptography.Crc32.CalculateHash(System.UInt32[],System.UInt32,System.Collections.Generic.IList{System.Byte},System.Int32,System.Int32,System.UInt32,System.Boolean,System.Boolean)">
+            <summary>
+            Calculate an inverted CRC32 for a given <paramref name="buffer"/> using a polynomial-derived <paramref name="table"/>.
+            </summary>
+            <param name="table">The polynomial-derived table such as from <see cref="!:InitializeTable(UInt32)"/>.</param>
+            <param name="seed">The initial seed to start from.</param>
+            <param name="buffer">The <see cref="!:IList&lt;byte&gt;"/> buffer to calculate the CRC32 from.</param>
+            <param name="start">What position within the <paramref name="buffer"/> to start calculating from.</param>
+            <param name="size">How many bytes within the <paramref name="buffer"/> to read in calculating the CRC32.</param>
+            <returns>The bit-inverted CRC32.</returns>
+            <remarks>This hash is bit-inverted. Use other methods in this class or <see langword="~"/> the result from this method.</remarks>
+        </member>
+        <member name="M:LuYao.Security.Cryptography.Crc32.UInt32ToBigEndianBytes(System.UInt32)">
+            <summary>
+            Convert a <see cref="T:System.UInt32"/> to a <see cref="!:byte[]"/> taking care
+            to reverse the bytes on little endian processors.
+            </summary>
+            <param name="uint32">The <see cref="T:System.UInt32"/> to convert.</param>
+            <returns>The <see cref="!:byte[]"/> containing the converted bytes.</returns>
+        </member>
+        <member name="M:LuYao.Security.Cryptography.Crc32.reflect(System.UInt32,System.Int32)">
+            <summary>
+            Helper to support bitwise reflecting (reversing) of bytes.
+            </summary>
+            <param name="crc"></param>
+            <param name="bitnum"></param>
+            <returns></returns>
+        </member>
+        <member name="T:LuYao.Security.Cryptography.Murmur128">
+            <summary>
+            高性能低碰撞Murmur128哈希算法，Redis等大量使用，比MD5要好。
+            </summary>
+        </member>
+        <member name="T:LuYao.StringZipper">
+            <summary>
+            字符串压缩工具
+            </summary>
+        </member>
+        <member name="M:LuYao.StringZipper.Register(LuYao.StringZipper.ICompressor)">
+            <summary>
+            注册一个压缩器
+            </summary>
+            <param name="compresser"></param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:LuYao.StringZipper.Register(LuYao.StringZipper.IEncoder)">
+            <summary>
+            注册一个编码器
+            </summary>
+            <param name="encoder"></param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="T:LuYao.StringZipper.ICompressor">
+            <summary>
+            压缩器
+            </summary>
+        </member>
+        <member name="T:LuYao.StringZipper.IEncoder">
+            <summary>
+            编码器
+            </summary>
+        </member>
+        <member name="M:LuYao.StringZipper.Zip(System.String,LuYao.StringZipper.ICompressor,LuYao.StringZipper.IEncoder)">
+            <summary>
+            压缩字符串
+            </summary>
+            <param name="str">待压缩字符串</param>
+            <param name="compressor">压缩器</param>
+            <param name="encoder">编码器</param>
+            <returns>压缩后的字符串</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:LuYao.StringZipper.Zip(System.String)">
+            <summary>
+            使用默认配置压缩字符串
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LuYao.StringZipper.Unzip(System.String)">
+            <summary>
+            解压缩字符串
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="T:LuYao.Text.Json.Internal.NumberConverter">
+            <summary>
+            zero-allocate itoa, dtoa, atoi, atod converters.
+            </summary>
+        </member>
+        <member name="M:LuYao.Text.Json.Internal.NumberConverter.IsNumber(System.Byte)">
+            <summary>
+            0 ~ 9
+            </summary>
+        </member>
+        <member name="M:LuYao.Text.Json.Internal.NumberConverter.IsNumberRepresentation(System.Byte)">
+            <summary>
+            Is 0 ~ 9, '.', '+', '-'?
+            </summary>
+        </member>
+        <member name="M:LuYao.Text.Json.JsonReader.ReadIsInArray(System.Int32@)">
+            <summary>
+            Convinient pattern of ReadIsBeginArrayWithVerify + while(!ReadIsEndArrayWithSkipValueSeparator)
+            </summary>
+        </member>
+        <member name="M:LuYao.Text.Json.JsonReader.ReadIsInObject(System.Int32@)">
+            <summary>
+            Convinient pattern of ReadIsBeginObjectWithVerify + while(!ReadIsEndObjectWithSkipValueSeparator)
+            </summary>
+        </member>
+        <member name="M:LuYao.Text.Json.JsonReader.ReadPropertyName">
+            <summary>ReadString + ReadIsNameSeparatorWithVerify</summary>
+        </member>
+        <member name="M:LuYao.Text.Json.JsonReader.ReadStringSegmentRaw">
+            <summary>Get raw string-span(do not unescape)</summary>
+        </member>
+        <member name="M:LuYao.Text.Json.JsonReader.ReadPropertyNameSegmentRaw">
+            <summary>Get raw string-span(do not unescape) + ReadIsNameSeparatorWithVerify</summary>
+        </member>
+        <member name="M:LuYao.Text.Json.JsonParsingException.GetUnderlyingByteArrayUnsafe">
+            <summary>
+            Underlying bytes is may be a pooling buffer, be careful to use it. If lost reference or can not handled byte[], return null.
+            </summary>
+        </member>
+        <member name="M:LuYao.Text.Json.JsonParsingException.GetUnderlyingStringUnsafe">
+            <summary>
+            Underlying bytes is may be a pooling buffer, be careful to use it. If lost reference or can not handled byte[], return null.
+            </summary>
+        </member>
+        <member name="F:LuYao.Text.Json.JsonToken.BeginObject">
+            <summary>{</summary>
+        </member>
+        <member name="F:LuYao.Text.Json.JsonToken.EndObject">
+            <summary>}</summary>
+        </member>
+        <member name="F:LuYao.Text.Json.JsonToken.BeginArray">
+            <summary>[</summary>
+        </member>
+        <member name="F:LuYao.Text.Json.JsonToken.EndArray">
+            <summary>]</summary>
+        </member>
+        <member name="F:LuYao.Text.Json.JsonToken.Number">
+            <summary>0~9, -</summary>
+        </member>
+        <member name="F:LuYao.Text.Json.JsonToken.String">
+            <summary>"</summary>
+        </member>
+        <member name="F:LuYao.Text.Json.JsonToken.True">
+            <summary>t</summary>
+        </member>
+        <member name="F:LuYao.Text.Json.JsonToken.False">
+            <summary>f</summary>
+        </member>
+        <member name="F:LuYao.Text.Json.JsonToken.Null">
+            <summary>n</summary>
+        </member>
+        <member name="F:LuYao.Text.Json.JsonToken.ValueSeparator">
+            <summary>,</summary>
+        </member>
+        <member name="F:LuYao.Text.Json.JsonToken.NameSeparator">
+            <summary>:</summary>
+        </member>
+        <member name="M:LuYao.Text.Json.JsonUtils.ExtractJson(System.String)">
+            <summary>
+            从字符串中抽取 JSON ，自动判断 JSON 层级。
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:LuYao.Text.Json.JsonWriter.WriteNameSeparator">
+            <summary>:</summary>
+        </member>
+        <member name="M:LuYao.Text.Json.JsonWriter.WritePropertyName(System.String)">
+            <summary>WriteString + WriteNameSeparator</summary>
+        </member>
+        <member name="T:LuYao.Util.Ascii85">
+            <summary>
+            C# implementation of ASCII85 encoding. 
+            Based on C code from http://www.stillhq.com/cgi-bin/cvsweb/ascii85/
+            </summary>
+            <remarks>
+            Jeff Atwood
+            http://www.codinghorror.com/blog/archives/000410.html
+            </remarks>
+        </member>
+        <!-- Badly formed XML comment ignored for member "F:LuYao.Util.Ascii85.PrefixMark" -->
+        <member name="F:LuYao.Util.Ascii85.SuffixMark">
+            <summary>
+            Suffix mark that identifies an encoded ASCII85 string, traditionally '~>'
+            </summary>
+        </member>
+        <member name="F:LuYao.Util.Ascii85.LineLength">
+            <summary>
+            Maximum line length for encoded ASCII85 string; 
+            set to zero for one unbroken line.
+            </summary>
+        </member>
+        <member name="F:LuYao.Util.Ascii85.EnforceMarks">
+            <summary>
+            Add the Prefix and Suffix marks when encoding, and enforce their presence for decoding
+            </summary>
+        </member>
+        <member name="M:LuYao.Util.Ascii85.Decode(System.String)">
+            <summary>
+            Decodes an ASCII85 encoded string into the original binary data
+            </summary>
+            <param name="s">ASCII85 encoded string</param>
+            <returns>byte array of decoded binary data</returns>
+        </member>
+        <member name="M:LuYao.Util.Ascii85.Encode(System.Byte[])">
+            <summary>
+            Encodes binary data into a plaintext ASCII85 format string
+            </summary>
+            <param name="ba">binary data to encode</param>
+            <returns>ASCII85 encoded string</returns>
+        </member>
+        <member name="M:LuYao.Util.Base62.ToBase62(System.Byte[],System.Boolean)">
+            <summary>
+            Encode a byte array with Base62
+            </summary>
+            <param name="original">Byte array</param>
+            <param name="inverted">Use inverted character set</param>
+            <returns>Base62 string</returns>
+        </member>
+        <member name="M:LuYao.Util.Base62.FromBase62(System.String,System.Boolean)">
+            <summary>
+            Decode a base62-encoded string
+            </summary>
+            <param name="base62">Base62 string</param>
+            <param name="inverted">Use inverted character set</param>
+            <returns>Byte array</returns>
+        </member>
+        <member name="M:System.Data.DataTableExtensions.ToList``1(System.Data.DataTable)">
+            <summary>
+            datatable转List
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="dt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.DateTimeExtensions.TruncateMillisecond(System.DateTime)">
+            <summary>
+            截断毫秒部分
+            </summary>
+        </member>
+        <member name="M:System.DateTimeExtensions.TruncateSecond(System.DateTime)">
+            <summary>
+            截断秒及之后部分
+            </summary>
+        </member>
+        <member name="M:System.DateTimeExtensions.TruncateMinute(System.DateTime)">
+            <summary>
+            阶段分钟及之后部分
+            </summary>
+        </member>
+        <member name="M:System.DateTimeExtensions.TruncateHour(System.DateTime)">
+            <summary>
+            截断小时及之后部分
+            </summary>
+        </member>
+        <member name="M:System.Net.Http.HttpResponseMessageExtensions.ReadAsHtmlAsync(System.Net.Http.HttpResponseMessage)">
+            <summary>
+            读取响应字符串，自动识别内容编码。
+            </summary>
+            <param name="response"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.StringExtensions.Extract(System.String,System.Text.RegularExpressions.Regex,System.String)">
+            <summary>
+            Extract strings by using regular expressions.
+            </summary>
+        </member>
+        <member name="M:System.StringExtensions.ExtractFirst(System.String,System.Text.RegularExpressions.Regex,System.String)">
+            <summary>
+            Extract string by using regular expressions. If no match, return null.
+            </summary>
+        </member>
+        <member name="M:System.StringExtensions.TryResolve(System.String,System.Text.RegularExpressions.Regex,System.String[][]@)">
+            <summary>
+            Projects the specified string to an array by using regular expressions.
+            </summary>
+        </member>
+    </members>
+</doc>

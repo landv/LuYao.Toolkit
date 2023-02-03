@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="LuYao.Toolkit.Channels.Gens.GenAesKey"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LuYao.Toolkit.Channels.Gens"
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             mc:Ignorable="d" 
+             d:Background="{DynamicResource RegionBrush}"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <hc:UniformSpacingPanel Orientation="Vertical" Spacing="10" Margin="15">
+        <TextBox Height="150" VerticalContentAlignment="Top" Text="{Binding Result}" TextWrapping="Wrap" IsReadOnly="True" ></TextBox>
+        <ItemsControl ItemsSource="{Binding Keys}" x:Name="itemKeys">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <hc:UniformSpacingPanel HorizontalAlignment="Left" Orientation="Horizontal" Spacing="5"></hc:UniformSpacingPanel>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Button Style="{DynamicResource ButtonPrimary}" Width="75" Command="{Binding DataContext.GenCommand,ElementName=itemKeys}" CommandParameter="{Binding .}">
+                        <TextBlock Text="{Binding Path=.,StringFormat={}{0}-bit}"></TextBlock>
+                    </Button>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+        <StackPanel Orientation="Horizontal">
+            <Button Style="{DynamicResource ButtonInfo}" HorizontalAlignment="Left"  Content="复制结果" Command="{Binding CopyCommand}" Width="128"></Button>
+        </StackPanel>
+    </hc:UniformSpacingPanel>
+</UserControl>

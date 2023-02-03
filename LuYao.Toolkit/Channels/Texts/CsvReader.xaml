@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="LuYao.Toolkit.Channels.Texts.CsvReader"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LuYao.Toolkit.Channels.Texts"
+             mc:Ignorable="d" 
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <DockPanel>
+        <hc:UniformSpacingPanel Spacing="10" DockPanel.Dock="Top" ItemVerticalAlignment="Center" Margin="15,5">
+            <TextBlock Text="分隔符："></TextBlock>
+            <TextBox Text="{Binding Delimiter}" Width="50" AcceptsTab="True"></TextBox>
+        </hc:UniformSpacingPanel>
+        <hc:UniformSpacingPanel Grid.Row="1" Spacing="10" ItemWidth="100" Margin="15,10" DockPanel.Dock="Bottom">
+            <Button Style="{DynamicResource ButtonPrimary}" Content="打开" Command="{Binding OpenCommand}"></Button>
+        </hc:UniformSpacingPanel>
+        <hc:Pagination DockPanel.Dock="Bottom" MaxPageCount="{Binding MaxPageCount,Mode=OneWay}" PageIndex="{Binding PageIndex,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Margin="15,5"></hc:Pagination>
+        <DataGrid ItemsSource="{Binding Rows}" hc:BorderElement.CornerRadius="0" BorderThickness="0,1" IsReadOnly="True" x:Name="MainDataGrid" AutoGeneratingColumn="MainDataGrid_AutoGeneratingColumn" AutoGenerateColumns="True" CanUserSortColumns="False"></DataGrid>
+    </DockPanel>
+</UserControl>

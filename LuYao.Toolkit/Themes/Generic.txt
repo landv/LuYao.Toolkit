@@ -1,0 +1,10 @@
+﻿Basic\Converters.xaml
+Basic\Geometries.xaml
+# --------------------------------------
+Controls\DataGrid.xaml
+Controls\FormItemContainer.xaml
+Controls\RdpTabItemHeader.xaml
+Controls\TextEditor.xaml
+Controls\Window.xaml
+Controls\TextBlockWithIconBox.xaml
+Controls\MasterDetailLayout.xaml

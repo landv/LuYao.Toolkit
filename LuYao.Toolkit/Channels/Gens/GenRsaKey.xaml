@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="LuYao.Toolkit.Channels.Gens.GenRsaKey"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LuYao.Toolkit.Channels.Gens"
+             xmlns:vm="clr-namespace:LuYao.Toolkit.Channels.Gens;assembly=LuYao.Toolkit.ViewModels"
+             xmlns:attaches="clr-namespace:LuYao.Toolkit.Attaches"
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             
+             d:Background="{DynamicResource RegionBrush}"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <DockPanel>
+        <hc:UniformSpacingPanel ItemVerticalAlignment="Center" Spacing="10" Margin="15,15,15,10" DockPanel.Dock="Top">
+            <TextBlock Text="密钥长度："></TextBlock>
+            <ComboBox Width="80" ItemsSource="{Binding KeySizes}" SelectedItem="{Binding KeySize}"></ComboBox>
+            <TextBlock Text="密钥格式："></TextBlock>
+            <ComboBox x:Name="KeyFormatComboBox" Width="100" attaches:ComboBoxAttach.BindEnum="{x:Type vm:RsaKeyFormat}"  SelectedValue="{Binding KeyFormat}"></ComboBox>
+            <Button Width="128" Style="{DynamicResource ButtonPrimary}" Content="重新生成" Command="{Binding GenCommand}"></Button>
+        </hc:UniformSpacingPanel>
+        <Border BorderBrush="{DynamicResource BorderBrush}" BorderThickness="0,1,0,0" Background="{DynamicResource SecondaryRegionBrush}">
+            <Grid Margin="15">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <TextBlock Text="RSA 私钥："></TextBlock>
+                <hc:SimplePanel Grid.Row="1" Margin="0,10,0,0">
+                    <TextBox IsReadOnly="True" hc:BorderElement.CornerRadius="0" Text="{Binding PrivateKey}" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" VerticalContentAlignment="Top"></TextBox>
+                    <Button Content="复制私钥" Visibility="{Binding PrivateKey,Converter={StaticResource String2VisibilityConverter}}" Width="96" Style="{DynamicResource ButtonInfo}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="16" Command="{Binding CopyCommand}" CommandParameter="{Binding PrivateKey}"></Button>
+                </hc:SimplePanel>
+                <TextBlock Text="RSA 公钥：" Grid.Row="2" Margin="0,10,0,0"></TextBlock>
+                <hc:SimplePanel Grid.Row="3" Margin="0,10,0,0">
+                    <TextBox IsReadOnly="True" hc:BorderElement.CornerRadius="0" Text="{Binding PublicKey}" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" VerticalContentAlignment="Top"></TextBox>
+                    <Button Content="复制公钥" Visibility="{Binding PublicKey,Converter={StaticResource String2VisibilityConverter}}" Width="96" Style="{DynamicResource ButtonInfo}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="16" Command="{Binding CopyCommand}" CommandParameter="{Binding PublicKey}"></Button>
+                </hc:SimplePanel>
+            </Grid>
+        </Border>
+    </DockPanel>
+</UserControl>

@@ -1,0 +1,39 @@
+﻿<UserControl x:Class="LuYao.Toolkit.Dialogs.ToolkitSettingsDialog"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LuYao.Toolkit.Dialogs"
+             xmlns:ctrls="clr-namespace:LuYao.Toolkit.Controls"
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             mc:Ignorable="d" 
+             xmlns:prism="http://prismlibrary.com/"
+             d:Background="{DynamicResource RegionBrush}"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <prism:Dialog.WindowStyle>
+        <Style BasedOn="{StaticResource DialogWindowBase}" TargetType="local:DialogWindow">
+            <Setter Property="prism:Dialog.WindowStartupLocation" Value="CenterOwner" />
+            <Setter Property="ResizeMode" Value="NoResize"/>
+            <Setter Property="ShowInTaskbar" Value="False"/>
+            <Setter Property="SizeToContent" Value="WidthAndHeight"/>
+        </Style>
+    </prism:Dialog.WindowStyle>
+    <hc:UniformSpacingPanel Orientation="Vertical" Spacing="10" Margin="10,15">
+        <GroupBox Header="通用" Style="{DynamicResource GroupBoxTab}">
+            <hc:UniformSpacingPanel Orientation="Vertical" Spacing="10" Margin="10">
+                <ComboBox Style="{DynamicResource ComboBoxExtend}" hc:InfoElement.Title="主题："  x:Name="ThemesComboBox" SelectedValue="{Binding Config.Theme}"/>
+                <CheckBox Content="工具箱启动时检查更新" IsChecked="{Binding Config.CheckForUpdatesOnStartup}"></CheckBox>
+            </hc:UniformSpacingPanel>
+        </GroupBox>
+        <GroupBox Header="文本编辑器" Style="{DynamicResource GroupBoxTab}">
+            <hc:UniformSpacingPanel Orientation="Vertical" Spacing="10" Margin="10">
+                <CheckBox Content="显示行号" IsChecked="{Binding Config.CodeEditorShowLineNumbers}"/>
+                <CheckBox Content="自动换行" IsChecked="{Binding Config.CodeEditorWordWrap}"/>
+            </hc:UniformSpacingPanel>
+        </GroupBox>
+        <hc:UniformSpacingPanel Spacing="10" Margin="70,10" ItemWidth="80">
+            <Button Content="保存" IsDefault="True" Style="{DynamicResource ButtonPrimary}" Command="{Binding SaveCommand}"></Button>
+            <Button Content="取消" IsCancel="True"></Button>
+        </hc:UniformSpacingPanel>
+    </hc:UniformSpacingPanel>
+</UserControl>

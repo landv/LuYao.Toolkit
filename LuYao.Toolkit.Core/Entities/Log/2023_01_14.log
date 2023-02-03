@@ -1,0 +1,26 @@
+﻿16:57:39.129  1 N - 导入模型：D:\src\coderbusy\luyao\src\toolkit\LuYao.Toolkit.Core\Entities\LuYao.Toolkit.xml
+16:57:39.490  1 N - 修正模型：D:\src\coderbusy\luyao\src\toolkit\LuYao.Toolkit.Core\Entities\LuYao.Toolkit.xml
+16:57:39.491  1 N - 生成实体类 D:\src\coderbusy\luyao\src\toolkit\LuYao.Toolkit.Core\Entities
+16:57:39.492  1 N - 生成 ViewModelState ViewModelState {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+16:57:39.494  1 N - 生成 ViewModelState ViewModelState {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+16:57:39.496  1 N - 生成 ChannelItemSession ChannelItemSession {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+16:57:39.497  1 N - 生成 ChannelItemSession ChannelItemSession {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+16:57:39.497  1 N - 生成 RdpGroup RdpGroup {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+16:57:39.498  1 N - 生成 RdpGroup RdpGroup {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+16:57:39.498  1 N - 生成 RdpConnection RdpConnection {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+16:57:39.499  1 N - 生成 RdpConnection RdpConnection {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+16:57:39.509  7 Y P [LuYao.Toolkit] Select * From ViewModelState
+16:57:39.510  4 N T [LuYao.Toolkit] Update ViewModelState Set UpdatedAt='2023-01-14 16:57:39',Value='{"XmlFileName":{"Type":"System.String","Json":"\"D:\\\\src\\\\coderbusy\\\\luyao\\\\src\\\\toolkit\\\\LuYao.Toolkit.Core\\\\Entities\\\\LuYao.Toolkit.xml\""}}' Where Id=20
+16:57:51.036  1 N - 导入模型：D:\src\coderbusy\luyao\src\toolkit\LuYao.Toolkit.Core\Entities\LuYao.Toolkit.xml
+16:57:51.039  1 N - 修正模型：D:\src\coderbusy\luyao\src\toolkit\LuYao.Toolkit.Core\Entities\LuYao.Toolkit.xml
+16:57:51.040  1 N - 生成实体类 D:\src\coderbusy\luyao\src\toolkit\LuYao.Toolkit.Core\Entities
+16:57:51.040  1 N - 生成 ViewModelState ViewModelState {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+16:57:51.040  1 N - 生成 ViewModelState ViewModelState {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+16:57:51.092  1 N - 生成 ChannelItemSession ChannelItemSession {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+16:57:51.093  1 N - 生成 ChannelItemSession ChannelItemSession {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+16:57:51.093  1 N - 生成 RdpGroup RdpGroup {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+16:57:51.094  1 N - 生成 RdpGroup RdpGroup {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+16:57:51.094  1 N - 生成 RdpConnection RdpConnection {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+16:57:51.094  1 N - 生成 RdpConnection RdpConnection {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+16:57:51.095  1 N - 生成 PortProxyRule 端口转发规则 {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+16:57:51.095  1 N - 生成 PortProxyRule 端口转发规则 {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}

@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="LuYao.Toolkit.Channels.Texts.TextJoin"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LuYao.Toolkit.Channels.Texts"
+             mc:Ignorable="d" Padding="15,15,15,10"
+             xmlns:editor="http://icsharpcode.net/sharpdevelop/avalonedit"
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+             xmlns:bh="clr-namespace:LuYao.Toolkit.Behaviors"
+             xmlns:me="clr-namespace:LuYao.Toolkit.Controls"
+             d:Background="{DynamicResource RegionBrush}"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <DockPanel >
+        <hc:UniformSpacingPanel  Spacing="10" DockPanel.Dock="Top" ItemVerticalAlignment="Center" ChildWrapping="Wrap" >
+            <TextBlock Text="分割："  ></TextBlock>
+            <ComboBox Width="100" SelectedValue="{Binding Split}" x:Name="SplitComboBox"></ComboBox>
+            <ComboBox Width="120" SelectedValue="{Binding Escape}" x:Name="EscapeComboBox"></ComboBox>
+            <TextBlock Text="拼接符："  ></TextBlock>
+            <ComboBox Width="100" SelectedValue="{Binding Join}" x:Name="JoinComboBox"></ComboBox>
+            <hc:UniformSpacingPanel Spacing="15">
+                <CheckBox Content="裁剪" IsChecked="{Binding Trim}"></CheckBox>
+                <CheckBox Content="去重" IsChecked="{Binding Distinct}"></CheckBox>
+                <CheckBox Content="排序" IsChecked="{Binding Sort}"></CheckBox>
+            </hc:UniformSpacingPanel>
+            <Button Content="转换" Command="{Binding ExecuteCommand}" Width="128" Style="{DynamicResource ButtonPrimary}"></Button>
+        </hc:UniformSpacingPanel>
+        <Grid Margin="0,5,0,0">
+            <Grid.Resources>
+                <Style TargetType="editor:TextEditor" BasedOn="{StaticResource {x:Type editor:TextEditor}}">
+                    <Setter Property="BorderThickness" Value="1" />
+                    <Setter Property="BorderBrush" Value="{DynamicResource BorderBrush}" />
+                    <Setter Property="ShowLineNumbers" Value="True" />
+                    <Setter Property="WordWrap" Value="True" />
+                </Style>
+            </Grid.Resources>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="5"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <me:CodeEditor Text="{Binding Input}"></me:CodeEditor>
+            <me:CodeEditor Text="{Binding Output}" IsReadOnly="True" Grid.Column="2"></me:CodeEditor>
+        </Grid>
+    </DockPanel>
+</UserControl>

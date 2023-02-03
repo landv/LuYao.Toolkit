@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="LuYao.Toolkit.Controls.DirectorySelector"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LuYao.Toolkit.Controls"
+             mc:Ignorable="d" 
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             x:Name="fsMyControl"
+             xmlns:conv="clr-namespace:LuYao.Toolkit.Converters"
+             HorizontalAlignment="Stretch"
+             d:DesignWidth="300">
+
+    <UserControl.Resources>
+        <conv:StringIsNotNullOrEmptyConverter x:Key="StringIsNotNullOrEmptyConverter" />
+        <conv:PathToFileNameConverter x:Key="PathToFileNameConverter" />
+    </UserControl.Resources>
+    <DockPanel LastChildFill="True">
+        <Button Margin="0" BorderThickness="0,1,1,1" hc:BorderElement.CornerRadius="0,4,4,0"  x:Name="OpenDirectoryButton" Click="OpenDirectoryButton_Click" DockPanel.Dock="Right" VerticalAlignment="Stretch" Height="auto" HorizontalAlignment="Right" Width="auto">
+            <Path Fill="{DynamicResource PrimaryTextBrush}" Stretch="Uniform" Width="16" Height="16" Data="M921.6,450.133333C915.2,441.6,906.666667,437.333333,896,437.333333L885.333333,437.333333 885.333333,341.333333C885.333333,300.8,851.2,266.666666,810.666667,266.666667L514.133333,266.666667C509.866666,266.666667,507.733333,264.533334,505.6,262.4L467.2,196.266667C454.4,174.933334,428.8,160,403.2,160L170.666667,160C130.133334,160,96,194.133333,96,234.666667L96,832C96,838.4 98.133333,844.8 102.4,851.2 108.8,859.733333 117.333333,864 128,864L768,864C780.8,864,793.6,855.466667,797.866667,842.666667L925.866667,480C930.133334,469.333333,928,458.666667,921.6,450.133333z M170.666667,224L403.2,224C407.466667,224,409.6,226.133333,411.733333,228.266667L450.133333,294.4C462.933333,315.733333,488.533333,330.666667,514.133333,330.666667L810.666667,330.666667C817.066667,330.666667,821.333334,334.933334,821.333333,341.333333L821.333333,437.333333 256,437.333333C243.2,437.333333,230.4,445.866666,226.133333,458.666667L160,644.266667 160,234.666667C160,228.266667,164.266667,224,170.666667,224z M744.533333,800L172.8,800 277.333333,501.333333 849.066667,501.333333 744.533333,800z" />
+        </Button>
+        <hc:TextBox Margin="0" hc:InfoElement.Placeholder="可将文件夹拖拽至此" Style="{DynamicResource TextBoxExtend}" hc:BorderElement.CornerRadius="4,0,0,4" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" x:Name="PathTextBox" Text="{Binding Path,ElementName=fsMyControl}" IsReadOnly="True" AllowDrop="True" PreviewDragOver="PathTextBox_PreviewDragOver" PreviewDrop="PathTextBox_PreviewDrop"  >
+            <hc:TextBox.ContextMenu>
+                <ContextMenu DataContext="{Binding RelativeSource={RelativeSource Self},Path=PlacementTarget}">
+                    <MenuItem IsEnabled="{Binding Text,Converter={StaticResource StringIsNotNullOrEmptyConverter}}"
+                              Header="打开目录" x:Name="OpenDirectory" Click="OpenDirectory_Click" />
+                    <MenuItem IsEnabled="{Binding Text,Converter={StaticResource StringIsNotNullOrEmptyConverter}}"
+                              Header="复制路径" x:Name="CopyPath" Click="CopyPath_Click" />
+                </ContextMenu>
+            </hc:TextBox.ContextMenu>
+        </hc:TextBox>
+    </DockPanel>
+</UserControl>

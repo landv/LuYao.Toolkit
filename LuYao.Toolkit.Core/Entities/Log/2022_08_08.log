@@ -1,0 +1,15 @@
+﻿19:34:37.489  1 N - 导入模型：D:\src\coderbusy\luyao\src\toolkit\LuYao.Toolkit.Core\Entities\LuYao.Toolkit.xml
+19:34:37.547  1 N - 生成实体类 D:\src\coderbusy\luyao\src\toolkit\LuYao.Toolkit.Core\Entities
+19:34:37.550  1 N - 生成 ViewModelState ViewModelState {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+19:34:37.562  1 N - 生成 ViewModelState ViewModelState {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+19:34:37.578  1 N - 生成 ChannelItemSession ChannelItemSession {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+19:34:37.578  1 N - 生成 ChannelItemSession ChannelItemSession {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+19:34:37.579  1 N - 生成 RdoIdCard RdoIdCard {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+19:34:37.579  1 N - 生成 RdoIdCard RdoIdCard {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+19:34:37.579  1 N - 生成 RdoFolder RdoFolder {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+19:34:37.583  1 N - 生成 RdoFolder RdoFolder {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+19:34:37.583  1 N - 生成 RdoConnection RdoConnection {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+19:34:37.584  1 N - 生成 RdoConnection RdoConnection {"BaseClass":"Entity","Namespace":"LuYao.Toolkit.Entities"}
+19:34:38.871  7 Y EQ [LuYao.Toolkit] Update ChannelItemSession Set LastClick='2022-08-08 19:34:35' Where Id='629fe6ac-3488-4045-9f46-fb59e195fa47'
+19:37:04.218 10 N T 实体缓存<ChannelItemSession>(23)总次数          2	[LuYao.Toolkit.Entities.ChannelItemSession]
+19:37:04.218 10 N T 实体缓存<ViewModelState>(14)总次数         37，命中         27（72.97%）	[LuYao.Toolkit.Entities.ViewModelState]

@@ -1,0 +1,68 @@
+﻿<UserControl x:Class="LuYao.Toolkit.Channels.Files.DetectFileEncodeing"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LuYao.Toolkit.Channels.Files"
+             xmlns:att="clr-namespace:LuYao.Toolkit.Attaches"
+             mc:Ignorable="d" 
+             d:Background="{DynamicResource RegionBrush}"
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <DockPanel>
+        <Border  DockPanel.Dock="Bottom" BorderBrush="{DynamicResource BorderBrush}" BorderThickness="0,1,0,0">
+            <hc:UniformSpacingPanel Margin="15" Spacing="15" ItemWidth="128">
+                <Button Style="{DynamicResource ButtonPrimary}" Command="{Binding OpenFilesCommand}" Content="选择文件"></Button>
+                <Button Style="{DynamicResource ButtonDanger}" Command="{Binding ClearCommand}" Content="清空结果"></Button>
+            </hc:UniformSpacingPanel>
+        </Border>
+        <DataGrid ItemsSource="{Binding Files}" BorderThickness="0" att:FileDragDropAttach.Group="default" hc:BorderElement.CornerRadius="0">
+            <DataGrid.Style>
+                <Style TargetType="DataGrid" BasedOn="{StaticResource {x:Type DataGrid}}">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Files.Count}" Value="0">
+                            <Setter Property="HeadersVisibility" Value="None" />
+                            <Setter Property="DataGrid.Background">
+                                <Setter.Value>
+                                    <VisualBrush Stretch="None">
+                                        <VisualBrush.Visual>
+                                            <StackPanel Background="{DynamicResource RegionBrush}">
+                                                <Image Source="/Resources/find.png" Stretch="None" />
+                                                <TextBlock Text="拖拽文件至此开始侦测编码" Padding="10" HorizontalAlignment="Center"
+                                                           Foreground="LightGray" />
+                                            </StackPanel>
+                                        </VisualBrush.Visual>
+                                    </VisualBrush>
+                                </Setter.Value>
+                            </Setter>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.Style>
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Width="Auto" Header="文件名" MinWidth="100">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Width="32" Height="32" Stretch="Fill" Source="{Binding Path,Converter={StaticResource PathToIconConverter}}"></Image>
+                                <DockPanel VerticalAlignment="Center" Margin="5,0,0,0">
+                                    <TextBlock Text="{Binding Name}" DockPanel.Dock="Top" ></TextBlock>
+                                    <TextBlock Text="{Binding Path}" Style="{DynamicResource TextBlockDefaultThiLight}"></TextBlock>
+                                </DockPanel>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="大小" MinWidth="75" Width="Auto" Binding="{Binding Length,Converter={StaticResource ByteCountToDisplaySizeConverter}}"></DataGridTextColumn>
+                <DataGridTextColumn Header="编码" MinWidth="75" Width="Auto" Binding="{Binding Encoding}"></DataGridTextColumn>
+                <DataGridTemplateColumn Width="Auto" MinWidth="75">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Cursor="Hand" CommandParameter="{Binding .}" Visibility="{Binding Encoding,Converter={StaticResource Object2VisibilityConverter}}" Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=DataGrid},Path=DataContext.PreviewCommand}" Style="{DynamicResource ButtonInfo.Small}" Content="预览"></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </DockPanel>
+</UserControl>

@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<Import Project="..\common.props" />
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<RootNamespace>LuYao.Toolkit</RootNamespace>
+		<LangVersion>latest</LangVersion>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Compile Remove="Modules\**" />
+	  <EmbeddedResource Remove="Modules\**" />
+	  <None Remove="Modules\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="Resources\LuYao.Toolkit.dat" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Include="Resources\LuYao.Toolkit.dat" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="HtmlAgilityPack" Version="1.11.46" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+		<PackageReference Include="NewLife.XCode" Version="11.5.2023.101" />
+		<PackageReference Include="Prism.Core" Version="8.1.97" />
+		<PackageReference Include="UTF.Unknown" Version="2.5.1" />
+		<PackageReference Include="FluentValidation" Version="11.4.0" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Reference Include="LuYao.Common">
+	    <HintPath>..\libs\LuYao.Common.dll</HintPath>
+	  </Reference>
+	</ItemGroup>
+
+</Project>

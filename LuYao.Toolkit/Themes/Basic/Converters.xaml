@@ -1,0 +1,15 @@
+﻿<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:convs="clr-namespace:LuYao.Toolkit.Converters"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <convs:EnumToDescriptionConverter x:Key="Enum2DescriptionConverter"></convs:EnumToDescriptionConverter>
+    <convs:EnumToBooleanConverter x:Key="EnumBooleanConverter"></convs:EnumToBooleanConverter>
+    <convs:FunctionBackgroundConverter x:Key="FunctionBackgroundConverter"></convs:FunctionBackgroundConverter>
+    <convs:DateTimeToRelativeConverter x:Key="DateTimeToRelativeConverter"/>
+    <convs:ByteCountToDisplaySizeConverter x:Key="ByteCountToDisplaySizeConverter"></convs:ByteCountToDisplaySizeConverter>
+    <convs:PathToIconConverter x:Key="PathToIconConverter"></convs:PathToIconConverter>
+    <convs:TruncateStringConverter x:Key="TruncateStringConverter"></convs:TruncateStringConverter>
+    <convs:EnumToVisibilityConverter x:Key="Enum2VisibilityConverter"></convs:EnumToVisibilityConverter>
+    <convs:LanguageCodeToNameConverter x:Key="LanguageCodeToNameConverter"></convs:LanguageCodeToNameConverter>
+</ResourceDictionary>

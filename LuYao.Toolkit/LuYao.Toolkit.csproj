@@ -1,0 +1,107 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<Import Project="..\common.props" />
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net7.0-windows</TargetFramework>
+		<UseWPF>true</UseWPF>
+		<LangVersion>latest</LangVersion>
+		<ApplicationIcon>App.ico</ApplicationIcon>
+	</PropertyGroup>
+	
+	<PropertyGroup>
+		<!-- beauty into sub-directory, default is libs, quote with "" if contains space  -->
+		<BeautyLibsDir>libs</BeautyLibsDir>
+		<!-- dlls that you don't want to be moved or can not be moved -->
+		<!-- <BeautyExcludes>dll1.dll;lib*;...</BeautyExcludes> -->
+		<BeautyExcludes>System.Data.SQLite.dll;SQLite.Interop.dll</BeautyExcludes>
+		<!-- dlls that end users never needed, so hide them -->
+		<!-- <BeautyHiddens>hostfxr;hostpolicy;*.deps.json;*.runtimeconfig*.json</BeautyHiddens> -->
+		<!-- set to True if you want to disable -->
+		<DisableBeauty>False</DisableBeauty>
+		<!-- set to True if you don't want to generate NetCoreBeauty flag file -->
+		<!-- do not beauty twice since there is no flag file to determine if beauty already -->
+		<NoBeautyFlag>False</NoBeautyFlag>
+		<ForceBeauty>False</ForceBeauty>
+		<!-- <BeautyAfterTasks></BeautyAfterTasks> -->
+		<!-- set to True if you want to disable -->
+		<DisablePatch>False</DisablePatch>
+		<!-- valid values: Error|Detail|Info -->
+		<BeautyLogLevel>Error</BeautyLogLevel>
+		<!-- set to a repo mirror if you have troble in connecting github -->
+		<GitCDN>https://gitee.com/liesauer/HostFXRPatcher</GitCDN>
+		<GitTree>master</GitTree>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Remove="Styles\**" />
+		<EmbeddedResource Remove="Styles\**" />
+		<None Remove="Styles\**" />
+		<Page Remove="Styles\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Remove="Controls\AvalonEdit\Highlighting\*.xshd" />
+		<None Remove="Resources\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Include="Controls\AvalonEdit\Highlighting\*.xshd" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="AvalonEdit" Version="6.2.0.78" />
+		<PackageReference Include="HandyControl" Version="3.4.0" />
+		<PackageReference Include="MahApps.Metro.IconPacks.Material" Version="4.11.0" />
+		<PackageReference Include="Prism.Unity" Version="8.1.97" />
+		<PackageReference Include="System.Data.SQLite.Core" Version="1.0.117" />
+		<PackageReference Include="System.Text.Encoding.CodePages" Version="7.0.0" />
+		<PackageReference Include="Ookii.Dialogs.Wpf" Version="5.0.1" />
+		<PackageReference Include="nulastudio.NetCoreBeauty" Version="1.2.9.3" />
+		<PackageReference Include="XamlAnimatedGif" Version="2.1.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\LuYao.Toolkit.Core\LuYao.Toolkit.Core.csproj" />
+		<ProjectReference Include="..\LuYao.Toolkit.ViewModels\LuYao.Toolkit.ViewModels.csproj">
+		</ProjectReference>
+	</ItemGroup>
+
+	<ItemGroup>
+		<Reference Include="AxInterop.MSTSCLib">
+			<HintPath>..\libs\AxInterop.MSTSCLib.dll</HintPath>
+		</Reference>
+		<Reference Include="Interop.MSTSCLib">
+			<HintPath>..\libs\Interop.MSTSCLib.dll</HintPath>
+		</Reference>
+		<Reference Include="LuYao.Common">
+		  <HintPath>..\libs\LuYao.Common.dll</HintPath>
+		</Reference>
+	</ItemGroup>
+
+	<ItemGroup>
+		<Resource Include="Resources\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Update="IPLookup.dat">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+
+	<Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+		<Exec Command="Themes\XamlCombine.exe Themes\Generic.txt Generic.xaml"></Exec>
+	</Target>
+	<ItemGroup>
+		<None Include="Themes\Basic\*.xaml">
+			<SubType>Designer</SubType>			
+		</None>
+		<None Include="Themes\Controls\*.xaml">
+			<SubType>Designer</SubType>
+		</None>
+	</ItemGroup>
+</Project>

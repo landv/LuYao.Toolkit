@@ -1,0 +1,9 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Generic.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/LuYao.Toolkit;component/Controls/AvalonEdit/SearchPanel.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+</ResourceDictionary>

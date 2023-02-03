@@ -1,0 +1,118 @@
+﻿<!--
+  There is no such thing like a log file format but there are usually keywords,
+  such as, ERROR, FATAL, DEBUG, or timestamps in squared brackets that could be
+  viewed with a better experience than no highlighting at all.
+  
+  This highlighting pattern is intended to improve the viewing experience for text
+  based (non-xml based) log files.
+-->
+<SyntaxDefinition name="Log" extensions=".log"
+     xmlns="http://icsharpcode.net/sharpdevelop/syntaxdefinition/2008">
+
+	<Color name="Digits"       foreground="Blue" fontStyle="italic" fontWeight="normal" />
+	<Color name="Comment"      foreground="Green"/>
+	<Color name="Punctuation"  foreground="Red"/>
+	<Color name="String"       foreground="#CE9178"/>
+	<Color name="String2"      foreground="#CE9178"/>
+
+	<Color name="Section"      foreground="#9CDCF0"/>
+
+	<Color name="AmericanDate" foreground="#7F7F7F"/>
+	<Color name="TimeStamp"    foreground="#7F7F7F"/>
+
+	<Color name="ImportantKeywords" fontWeight="bold"/>
+	<Color name="InfoKeywords" foreground="Green" fontWeight="normal"/>
+
+	<Color name="DebugTag" foreground="#7F7F7F" fontWeight="normal"/>
+	<Color name="InfoTag" foreground="#569CD6" fontWeight="normal"/>
+	<Color name="WarnTag" foreground="#CE9A2A" fontWeight="normal"/>
+	<Color name="ErrorTag" foreground="#E83C3A" fontWeight="normal"/>
+
+	<RuleSet ignoreCase="true">
+
+		<Keywords color="InfoKeywords">
+			<Word>Info</Word>
+			<Word>Information</Word>
+			<Word>Trace</Word>
+			<Word>Debug</Word>
+		</Keywords>
+
+		<Keywords color="ImportantKeywords">
+			<Word>Error</Word>
+			<Word>Warn</Word>
+			<Word>Warning</Word>
+			<Word>Exception</Word>
+			<Word>Fatal</Word>
+		</Keywords>
+
+		<Keywords color="DebugTag">
+			<Word>[Trace]</Word>
+			<Word>[Debug]</Word>
+		</Keywords>
+
+		<Keywords color="InfoTag">
+			<Word>[Info]</Word>
+			<Word>[Information]</Word>
+		</Keywords>
+
+		<Keywords color="WarnTag">
+			<Word>[Warn]</Word>
+			<Word>[Warning]</Word>
+		</Keywords>
+
+		<Keywords color="ErrorTag">
+			<Word>[Error]</Word>
+			<Word>[Exception]</Word>
+			<Word>[Fatal]</Word>
+		</Keywords>
+
+		<Span color="String" multiline="false" >
+			<Begin>'</Begin>
+			<End>'</End>
+		</Span>
+
+		<Span color="String2" multiline="false"  >
+			<Begin>"</Begin>
+			<End>"</End>
+		</Span>
+
+		<!-- span for escape sequences -->
+		<!--<Span  color="Comment" multiline="false">
+			<Begin>;</Begin>
+		</Span>-->
+
+		<Span  color="Comment" multiline="false">
+			<Begin>\#</Begin>
+		</Span>
+
+		<Span color="Section" multiline="false">
+			<Begin>\[</Begin>
+			<End>\]</End>
+		</Span>
+
+		<Rule color="Punctuation">
+      [?,.;()\[\]{}+\-/%*&lt;&gt;^+~!|&amp;]+
+    </Rule>
+
+		<Rule color="Digits">
+			[?,.;()\[\]{}+\-/%*&lt;&gt;^+~!|&amp;]+[0-9]+[ ?,.;()\[\]{}+\-/%*&lt;&gt;^+~!|&amp;]+\n
+		</Rule>
+
+		<!-- American Date: 2013-01-28 -->
+		<Rule color="AmericanDate">
+			[0-9][0-9][0-9][0-9]\-[0-9][0-9]\-[0-9][0-9]
+		</Rule>
+
+		<!-- Time Stamp with milli seconds: 13:05:35.425 -->
+		<Rule color="TimeStamp">
+			[0-9][0-9]\:[0-9][0-9]\:[0-9][0-9]\.[0-9][0-9][0-9]
+		</Rule>
+
+		<!-- Time Stamp WITHOUT milli seconds: 13:05:35 -->
+		<Rule color="TimeStamp">
+			[0-9][0-9]\:[0-9][0-9]\:[0-9][0-9]
+		</Rule>
+
+	</RuleSet>
+
+</SyntaxDefinition>

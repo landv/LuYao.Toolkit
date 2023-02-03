@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="LuYao.Toolkit.Controls.FileSelector"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LuYao.Toolkit.Controls"
+             mc:Ignorable="d" 
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             xmlns:icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             xmlns:conv="clr-namespace:LuYao.Toolkit.Converters"
+             d:Background="{DynamicResource RegionBrush}"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <conv:StringIsNotNullOrEmptyConverter x:Key="StringIsNotNullOrEmptyConverter" />
+        <conv:PathToFileNameConverter x:Key="PathToFileNameConverter" />
+    </UserControl.Resources>
+    <DockPanel DataContext="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=local:FileSelector}}">
+        <Button Style="{DynamicResource ButtonDefault}" x:Name="OpenFolderButton" Click="OpenFolderButton_Click" DockPanel.Dock="Right" BorderThickness="0,1,1,1" hc:BorderElement.CornerRadius="0,3,3,0">
+            <icon:PackIconMaterial Kind="FolderOpenOutline" ></icon:PackIconMaterial>
+        </Button>
+        <hc:TextBox IsReadOnly="True" Text="{Binding FilePath,Converter={StaticResource PathToFileNameConverter}}" hc:InfoElement.Placeholder="{Binding Placeholder}" hc:BorderElement.CornerRadius="3,0,0,3" x:Name="FileNameTextBox" PreviewDrop="FileNameTextBox_PreviewDrop" PreviewDragOver="FileNameTextBox_PreviewDragOver">
+            <hc:TextBox.ContextMenu>
+                <ContextMenu DataContext="{Binding RelativeSource={RelativeSource Self},Path=PlacementTarget}">
+                    <MenuItem IsEnabled="{Binding Text,Converter={StaticResource StringIsNotNullOrEmptyConverter}}"                              Header="打开目录" x:Name="OpenFolder" Click="OpenFolder_Click" />
+                    <MenuItem IsEnabled="{Binding Text,Converter={StaticResource StringIsNotNullOrEmptyConverter}}"                              Header="复制全路径" x:Name="CopyFullName" Click="CopyFullName_Click" />
+                    <MenuItem IsEnabled="{Binding Text,Converter={StaticResource StringIsNotNullOrEmptyConverter}}"                              Header="复制文件名" x:Name="CopyFileName" Click="CopyFileName_Click" />
+                </ContextMenu>
+            </hc:TextBox.ContextMenu>
+        </hc:TextBox>
+    </DockPanel>
+</UserControl>

@@ -1,0 +1,84 @@
+﻿<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:rdo="clr-namespace:LuYao.Toolkit.Tabs.Rdp.Controls"
+    xmlns:icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+    xmlns:hc="https://handyorg.github.io/handycontrol"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style TargetType="{x:Type rdo:RdpTabItemHeader}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type rdo:RdpTabItemHeader}">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                        <Border.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="链接" Command="{Binding RelativeSource={RelativeSource Mode=TemplatedParent},Path=ConnectCommand}">
+                                    <MenuItem.Icon>
+                                        <icon:PackIconMaterial Width="12" Height="12" Kind="Connection" Foreground="{DynamicResource PrimaryBrush}"></icon:PackIconMaterial>
+                                    </MenuItem.Icon>
+                                    <MenuItem.Style>
+                                        <Style TargetType="MenuItem" BasedOn="{StaticResource MenuItemBaseStyle}">
+                                            <Setter Property="Visibility" Value="Visible" />
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=TemplatedParent},Path=Status}" Value="Connecting">
+                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=TemplatedParent},Path=Status}" Value="Connected">
+                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </MenuItem.Style>
+                                </MenuItem>
+                                <MenuItem Header="断开" Command="{Binding RelativeSource={RelativeSource Mode=TemplatedParent},Path=DisconnectCommand}">
+                                    <MenuItem.Icon>
+                                        <icon:PackIconMaterial Width="12" Height="12" Kind="LanDisconnect" Foreground="{DynamicResource InfoBrush}"></icon:PackIconMaterial>
+                                    </MenuItem.Icon>
+                                    <MenuItem.Style>
+                                        <Style TargetType="MenuItem"  BasedOn="{StaticResource MenuItemBaseStyle}">
+                                            <Setter Property="Visibility" Value="Collapsed" />
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=TemplatedParent},Path=Status}" Value="Connected">
+                                                    <Setter Property="Visibility" Value="Visible" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </MenuItem.Style>
+                                </MenuItem>
+                                <MenuItem Header="关闭" Command="hc:ControlCommands.Close">
+                                    <MenuItem.Icon>
+                                        <icon:PackIconMaterial Kind="Close"  Width="12" Height="12" Foreground="{DynamicResource DangerBrush}"></icon:PackIconMaterial>
+                                    </MenuItem.Icon>
+                                </MenuItem>
+                            </ContextMenu>
+                        </Border.ContextMenu>
+                        <DockPanel Background="Transparent">
+                            <icon:PackIconMaterial Width="12" Height="12" DockPanel.Dock="Left" VerticalAlignment="Center">
+                                <icon:PackIconMaterial.Style>
+                                    <Style TargetType="icon:PackIconMaterial">
+                                        <Setter Property="Foreground" Value="{DynamicResource DangerBrush}" />
+                                        <Setter Property="Kind" Value="LanDisconnect" />
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=TemplatedParent},Path=Status}" Value="Connecting">
+                                                <Setter Property="Foreground" Value="{DynamicResource PrimaryBrush}" />
+                                                <Setter Property="Kind" Value="SatelliteUplink" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=TemplatedParent},Path=Status}" Value="Connected">
+                                                <Setter Property="Foreground" Value="{DynamicResource SuccessBrush}" />
+                                                <Setter Property="Kind" Value="LanConnect" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </icon:PackIconMaterial.Style>
+                            </icon:PackIconMaterial>
+                            <TextBlock Margin="5,0" Text="{Binding RelativeSource={RelativeSource TemplatedParent},Path=Connection.Name}" VerticalAlignment="Center"></TextBlock>
+                        </DockPanel>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

@@ -1,0 +1,8 @@
+﻿14:15:45.514  4 N T 实体缓存<ViewModelState>(24)总次数          2	[LuYao.Toolkit.Entities.ViewModelState]
+14:15:45.514  4 N T 实体缓存<FunctionViewItem>(36)总次数          1	[LuYao.Toolkit.Entities.FunctionViewItem]
+18:15:45.532  4 N T 实体缓存<ViewModelState>(24)总次数          3	[LuYao.Toolkit.Entities.ViewModelState]
+18:15:45.533  4 N T 实体缓存<FunctionViewItem>(36)总次数          3	[LuYao.Toolkit.Entities.FunctionViewItem]
+19:48:32.100  4 N T 慢SQL[1,180ms] [LuYao.Toolkit] Update ViewModelState Set Value='{"UseNumber":true,"UseSymbols":true,"Length":80}' Where Id=1
+19:48:32.101  4 N T 任务 [7]<>c.<.cctor>b__0_0 (2147483647ms) 耗时过长 1,198ms，建议使用异步任务Async=true
+20:15:45.535  4 N T 实体缓存<ViewModelState>(24)总次数          3	[LuYao.Toolkit.Entities.ViewModelState]
+20:15:45.535  4 N T 实体缓存<FunctionViewItem>(36)总次数          4	[LuYao.Toolkit.Entities.FunctionViewItem]

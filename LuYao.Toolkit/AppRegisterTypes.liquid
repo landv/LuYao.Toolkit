@@ -1,0 +1,12 @@
+﻿using Prism.Ioc;
+
+namespace LuYao.Toolkit;
+static class AppRegisterTypes
+{
+    public static void RegisterViews(IContainerRegistry containerRegistry)
+    {
+{%- for item in Types %}
+        containerRegistry.RegisterForNavigation(typeof({{item.Type}}), {{item.View | json}});
+{%- endfor %}
+    }
+}

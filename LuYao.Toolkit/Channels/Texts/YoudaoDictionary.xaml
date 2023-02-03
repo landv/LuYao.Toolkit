@@ -1,0 +1,98 @@
+﻿<UserControl x:Class="LuYao.Toolkit.Channels.Texts.YoudaoDictionary"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LuYao.Toolkit.Channels.Texts"
+             xmlns:icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             mc:Ignorable="d" 
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             Background="{DynamicResource RegionBrush}"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <DrawingImage x:Key="SoundIcon">
+            <DrawingImage.Drawing>
+                <DrawingGroup >
+                    <DrawingGroup.Children>
+                        <GeometryDrawing Brush="#FF999999">
+                            <GeometryDrawing.Geometry>
+                                <PathGeometry FillRule="Nonzero" Figures="M476,144.083L476,878.4159999999999C459.847,867.6179999999999 431.562,846.6339999999999 385.47,806.641 333.51200000000006,761.558 286.28200000000004,716.146 268.56800000000004,698.432A80,80,0,0,0,212,675L122,675C99.944,675,82,657.056,82,635L82,399C82,376.944,99.944,359,122,359L212,359A79.995,79.995,0,0,0,268.568,335.568C270.45599999999996,333.681 272.616,331.51599999999996 275.025,329.102 297.62,306.45799999999997 344.63599999999997,259.33899999999994 391.89,215.767 433.75399999999996,177.165 460.134,155.789 476,144.083 M478,53.69C434.922,53.69,254.333,236.667,212,279L122,279C55.726,279,2,332.726,2,399L2,635C2,701.274,55.726,755,122,755L212,755C260.66700000000003,803.6659999999999 434.922,966.8009999999999 478,966.8009999999999 521.078,966.8009999999999 556,931.8789999999999 556,888.8009999999999L556,131.69C556,88.612,521.078,53.69,478,53.69z M651.563,757.07C633.971,757.07 617.85,745.378 612.997,727.589 607.183,706.2760000000001 619.746,684.2860000000001 641.059,678.471 723.5,655.979 781.078,580.5 781.078,494.92 781.078,407.788 722.194,331.96500000000003 637.883,310.533 616.472,305.09000000000003 603.528,283.322 608.971,261.911 614.413,240.5 636.191,227.559 657.592,232.999 714.778,247.536 766.485,281.19 803.189,327.762 821.5659999999999,351.08 835.877,377.047 845.7239999999999,404.938 855.9119999999999,433.79699999999997 861.078,464.072 861.078,494.91999999999996 861.078,555.3969999999999 841.543,612.5809999999999 804.5849999999999,660.2909999999999 768.805,706.4799999999999 718.2069999999999,740.347 662.1139999999999,755.65A40.058,40.058,0,0,1,651.5629999999999,757.0699999999999z" />
+                            </GeometryDrawing.Geometry>
+                        </GeometryDrawing>
+                        <GeometryDrawing Brush="#FF999999">
+                            <GeometryDrawing.Geometry>
+                                <PathGeometry FillRule="Nonzero" Figures="M722.555,870.173C704.665,870.173 688.376,858.086 683.8,839.949 678.395,818.529 691.377,796.7829999999999 712.798,791.3789999999999 848.609,757.108 943.463,635.2 943.463,494.92 943.463,354.64 848.61,232.732 712.799,198.462 691.379,193.057 678.3969999999999,171.31099999999998 683.802,149.891 689.207,128.47199999999998 710.947,115.48899999999999 732.373,120.89299999999999 773.6600000000001,131.31099999999998 812.7230000000001,148.438 848.474,171.79899999999998 883.6020000000001,194.75199999999998 914.6110000000001,223.106 940.639,256.07399999999996 966.933,289.37999999999994 987.409,326.47299999999996 1001.496,366.323 1016.072,407.55499999999995 1023.463,450.82099999999997 1023.463,494.919 1023.463,539.018 1016.072,582.283 1001.495,623.516 987.407,663.367 966.932,700.459 940.638,733.765 914.61,766.734 883.601,795.088 848.472,818.0409999999999 812.721,841.401 773.659,858.5279999999999 732.37,868.9459999999999A40.018,40.018,0,0,1,722.555,870.1729999999999z" />
+                            </GeometryDrawing.Geometry>
+                        </GeometryDrawing>
+                    </DrawingGroup.Children>
+                    <DrawingGroup.ClipGeometry>
+                        <RectangleGeometry Rect="0,0,1024,1024" />
+                    </DrawingGroup.ClipGeometry>
+                </DrawingGroup>
+            </DrawingImage.Drawing>
+        </DrawingImage>
+    </UserControl.Resources>
+    <hc:ScrollViewer>
+        <hc:UniformSpacingPanel Orientation="Vertical" Spacing="10" Margin="15">
+            <hc:UniformSpacingPanel Orientation="Horizontal" Spacing="10">
+                <TextBox Style="{DynamicResource TextBoxExtend}" Width="300" Text="{Binding Input, UpdateSourceTrigger=PropertyChanged}" 
+                     hc:InfoElement.Placeholder="要查找的英文单词，回车查找。"  >
+                </TextBox>
+                <Button Width="128" Command="{Binding QueryCommand}" Style="{DynamicResource ButtonPrimary}" IsDefault="True" Content="查找"/>
+            </hc:UniformSpacingPanel>
+            <hc:SimplePanel Visibility="{Binding Result,Converter={StaticResource Object2VisibilityConverter}}">
+                <StackPanel Orientation="Vertical" Visibility="{Binding Result.IsEmpty,Converter={StaticResource Boolean2VisibilityReConverter}}">
+                    <ItemsControl ItemsSource="{Binding Result.Phonetic}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <hc:UniformSpacingPanel Orientation="Horizontal" Spacing="15"></hc:UniformSpacingPanel>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <hc:UniformSpacingPanel ItemVerticalAlignment="Center" Spacing="5" Orientation="Horizontal">
+                                    <Button 
+                                        Style="{StaticResource ButtonCustom}" 
+                                        Background="Transparent" Cursor="Hand" 
+                                        CommandParameter="{Binding .}"
+                                        Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl},Path=DataContext.PlayCommand}"
+                                        >
+                                        <Image Source="{StaticResource SoundIcon}" Height="16"></Image>
+                                    </Button>
+                                    <TextBlock Text="{Binding Type}" VerticalAlignment="Center"></TextBlock>
+                                    <TextBox IsReadOnly="True" hc:BorderElement.CornerRadius="0" Margin="0" Padding="0" BorderThickness="0" Text="{Binding Text}"></TextBox>
+                                </hc:UniformSpacingPanel>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                    <hc:Divider Content="释义" HorizontalContentAlignment="Left"></hc:Divider>
+                    <ItemsControl ItemsSource="{Binding Result.Paraphrase}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <TextBox TextWrapping="Wrap" BorderThickness="0" IsReadOnly="True" Text="{Binding .}"></TextBox>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                    <hc:Divider Content="变体" HorizontalContentAlignment="Left">
+                        <hc:Divider.Style>
+                            <Style TargetType="{x:Type hc:Divider}" BasedOn="{StaticResource {x:Type hc:Divider}}">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding Result.Variant.Count}" Value="0">
+                                        <Setter Property="Visibility" Value="Collapsed" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </hc:Divider.Style>
+                    </hc:Divider>
+                    <ItemsControl ItemsSource="{Binding Result.Variant}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <TextBox TextWrapping="Wrap" BorderThickness="0" IsReadOnly="True" Text="{Binding .}"></TextBox>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </StackPanel>
+            </hc:SimplePanel>
+        </hc:UniformSpacingPanel>
+    </hc:ScrollViewer>
+</UserControl>
