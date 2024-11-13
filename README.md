@@ -8,6 +8,9 @@ https://www.coderbusy.com/luyao-toolkit
 
 🌐[LuYao.Toolkit.zip](https://luyao.coderbusy.com/LuYao.Toolkit.zip)
 
+## 冰爷AV版本
+https://github.com/coderbusy/luyao-avalonia
+
 ### 数据生成
 
 - 生成 GUID
